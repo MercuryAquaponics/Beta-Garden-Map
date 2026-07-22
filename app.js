@@ -117,6 +117,12 @@ function initPlantPanel() {
   document.getElementById('plant-panel-title').textContent = currentLang === 'sv' ? 'Växter' : 'Plants';
 }
 
+function openPlantPanel() {
+  closeAllPanels();
+  document.getElementById('plant-panel').classList.add('open');
+  openPanel = 'plant';
+}
+
 function renderCategoryButtons() {
   const list = document.getElementById('plant-list');
   list.innerHTML = '';
@@ -190,7 +196,14 @@ function showCategoryView(categoryId) {
   document.querySelectorAll('.category-btn').forEach(btn => {
     btn.classList.remove('active');
   });
-  event.target.classList.add('active');
+  
+  // Find and activate the clicked button
+  const buttons = document.querySelectorAll('.category-btn');
+  buttons.forEach(btn => {
+    if (btn.textContent === category.label[currentLang]) {
+      btn.classList.add('active');
+    }
+  });
 
   // Get all containers in this category
   const containerCodes = Object.keys(POSITIONS).filter(code => code[0] === categoryId);

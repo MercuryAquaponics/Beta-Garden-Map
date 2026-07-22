@@ -47,24 +47,25 @@ header {
 
 .controls {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   align-items: center;
 }
 
 .lang-flag-btn {
   background: rgba(255,255,255,0.15);
   border: 1.5px solid var(--mist);
-  border-radius: 6px;
+  border-radius: 8px;
   color: white;
-  font-size: 1.2rem;
-  padding: 6px 10px;
+  font-size: 1.4rem;
+  padding: 8px 12px;
   cursor: pointer;
   transition: background 0.15s, transform 0.1s;
+  line-height: 1;
 }
 
 .lang-flag-btn:hover {
   background: rgba(255,255,255,0.25);
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 #content-wrap {
