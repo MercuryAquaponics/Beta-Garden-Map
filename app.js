@@ -54,6 +54,15 @@ window.addEventListener('DOMContentLoaded', () => {
   initPins();
   initMapControls();
   fitStage();
+  
+  // Refit map when panels open/close
+  const observer = new MutationObserver(() => {
+    fitStage();
+  });
+  
+  observer.observe(document.getElementById('lang-panel'), { attributes: true, attributeFilter: ['class'] });
+  observer.observe(document.getElementById('plant-panel'), { attributes: true, attributeFilter: ['class'] });
+  observer.observe(document.getElementById('detail-panel'), { attributes: true, attributeFilter: ['class'] });
 });
 
 /* ─── LANGUAGE PANEL ───────────────────────────────────────────────────── */
@@ -67,8 +76,6 @@ function initLanguagePanel() {
     btn.onclick = () => setLanguage(lang.code);
     grid.appendChild(btn);
   });
-
-  document.getElementById('lang-btn').onclick = openLangPanel;
 }
 
 function setLanguage(code) {
@@ -95,8 +102,16 @@ function setLanguage(code) {
   if (openPanel === 'detail') {
     updateDetailPanel();
   }
+}
 
-  closeLangPanel();
+function toggleLangPanel() {
+  if (openPanel === 'lang') {
+    closeLangPanel();
+  } else {
+    closeAllPanels();
+    document.getElementById('lang-panel').classList.add('open');
+    openPanel = 'lang';
+  }
 }
 
 function openLangPanel() {
@@ -115,6 +130,16 @@ function initPlantPanel() {
   renderCategoryButtons();
   updatePlantList();
   document.getElementById('plant-panel-title').textContent = currentLang === 'sv' ? 'Växter' : 'Plants';
+}
+
+function togglePlantPanel() {
+  if (openPanel === 'plant') {
+    closePlantPanel();
+  } else {
+    closeAllPanels();
+    document.getElementById('plant-panel').classList.add('open');
+    openPanel = 'plant';
+  }
 }
 
 function openPlantPanel() {
