@@ -9,7 +9,7 @@ let minScale = 0.3, maxScale = 6;
 
 const pinEls = {};
 
-/* ─── LANGUAGE DEFINITIONS (expandable) ───────────────────────────────────────── */
+/* ─── LANGUAGE DEFINITIONS (expandable) ─────────────────────────────────────── */
 const LANGUAGES = [
   { code: 'sv', name: 'Svenska', flag: '🇸🇪' },
   { code: 'en', name: 'English', flag: '🇬🇧' },
@@ -53,11 +53,13 @@ window.addEventListener('DOMContentLoaded', () => {
   initPlantPanel();
   initPins();
   initMapControls();
-  fitStage();
+  
+  // Initial fit with delay to ensure DOM is ready
+  setTimeout(() => fitStage(), 100);
   
   // Refit map when panels open/close
   const observer = new MutationObserver(() => {
-    fitStage();
+    setTimeout(() => fitStage(), 50);
   });
   
   observer.observe(document.getElementById('lang-panel'), { attributes: true, attributeFilter: ['class'] });
@@ -65,7 +67,7 @@ window.addEventListener('DOMContentLoaded', () => {
   observer.observe(document.getElementById('detail-panel'), { attributes: true, attributeFilter: ['class'] });
 });
 
-/* ─── LANGUAGE PANEL ───────────────────────────────────────────────────────────── */
+/* ─── LANGUAGE PANEL ──────────────────────────────────────────────────────────── */
 function initLanguagePanel() {
   const grid = document.getElementById('lang-grid');
   LANGUAGES.forEach(lang => {
@@ -119,7 +121,7 @@ function closeLangPanel() {
   if (openPanel === 'lang') openPanel = null;
 }
 
-/* ─── PLANT PANEL ───────────────────────────────────────────────────────────────── */
+/* ─── PLANT PANEL ──────────────────────────────────────────────────────────────── */
 function initPlantPanel() {
   renderCategoryButtons();
   updatePlantList();
@@ -151,7 +153,13 @@ function renderCategoryButtons() {
     btn.textContent = cat.label[currentLang];
     btn.style.borderColor = cat.hex;
     btn.style.color = cat.hex;
-    btn.onclick = () => showCategoryView(cat.id);
+    btn.onclick = () => {
+      if (selectedCategory === cat.id) {
+        clearCategoryFilter();
+      } else {
+        showCategoryView(cat.id);
+      }
+    };
     categoryContainer.appendChild(btn);
   });
 
@@ -193,9 +201,14 @@ function updatePlantList() {
     item.className = 'plant-item';
     if (plantName === highlightedPlant) item.classList.add('active');
     item.textContent = plantName;
-    item.onclick = () => selectPlant(plantName);
+    item.onclick = () => selectPlantFromList(plantName);
     listContainer.appendChild(item);
   });
+}
+
+function selectPlantFromList(plantName) {
+  highlightedPlant = plantName;
+  showPlantDetail(plantName);
 }
 
 function showCategoryView(categoryId) {
@@ -241,6 +254,14 @@ function showCategoryView(categoryId) {
     
     listContainer.appendChild(containerDiv);
   });
+}
+
+function clearCategoryFilter() {
+  selectedCategory = null;
+  document.querySelectorAll('.category-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  updatePlantList();
 }
 
 function selectPlant(plantName) {
@@ -302,7 +323,7 @@ function initPins() {
   });
 }
 
-/* ─── DETAIL PANEL ───────────────────────────────────────────────────────────── */
+/* ─── DETAIL PANEL ──────────────────────────────────────────────────────────────── */
 function showContainerDetail(code) {
   closeAllPanels();
 
@@ -349,7 +370,13 @@ function showContainerDetail(code) {
 }
 
 function showPlantDetail(plantName) {
+  closeAllPanels();
+  
+  const backBtn = currentLang === 'sv' ? '← Tillbaka' : '← Back';
   const content = `
+    <div style="margin-bottom: 16px;">
+      <button onclick="goBackToPlants()" style="background: var(--sage); color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer; font-weight: 600;">${backBtn}</button>
+    </div>
     <div class="detail-section">
       <span class="detail-label">${currentLang === 'sv' ? 'Beskrivning' : 'Description'}</span>
       <div class="plant-description">
@@ -371,6 +398,12 @@ function showPlantDetail(plantName) {
   document.getElementById('detail-content').innerHTML = content;
   document.getElementById('detail-panel').classList.add('open');
   openPanel = 'detail';
+}
+
+function goBackToPlants() {
+  closeAllPanels();
+  document.getElementById('plant-panel').classList.add('open');
+  openPanel = 'plant';
 }
 
 function updateDetailPanel() {
@@ -406,7 +439,7 @@ function closeAllPanels() {
   closeDetailPanel();
 }
 
-/* ─── MAP CONTROLS ───────────────────────────────────────────────────────────── */
+/* ─── MAP CONTROLS ──────────────────────────────────────────────────────────────── */
 function initMapControls() {
   const viewport = document.getElementById('map-viewport');
 
@@ -506,8 +539,13 @@ function applyTransform() {
 
 function fitStage(padding = 20) {
   const viewport = document.getElementById('map-viewport');
+  if (!viewport) return;
+  
   const vw = viewport.clientWidth;
   const vh = viewport.clientHeight;
+  
+  if (vw <= 0 || vh <= 0 || !IMG_W || !IMG_H) return;
+  
   const s = Math.min((vw - padding * 2) / IMG_W, (vh - padding * 2) / IMG_H);
   scale = Math.max(s, 0.05);
   minScale = scale * 0.6;
