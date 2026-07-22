@@ -165,9 +165,7 @@ function updatePlantList() {
   listContainer.innerHTML = '';
   const uniquePlants = new Set();
   Object.values(PLANTS).forEach(plant => {
-    if (plant[currentLang]) {
-      uniquePlants.add(plant[currentLang]);
-    }
+    if (plant[currentLang]) uniquePlants.add(plant[currentLang]);
   });
   const sortedPlants = Array.from(uniquePlants).sort();
   sortedPlants.forEach(plantName => {
@@ -194,9 +192,7 @@ function showCategoryView(categoryId) {
   document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
   const buttons = document.querySelectorAll('.category-btn');
   buttons.forEach(btn => {
-    if (btn.textContent === category.label[currentLang]) {
-      btn.classList.add('active');
-    }
+    if (btn.textContent === category.label[currentLang]) btn.classList.add('active');
   });
   const containerCodes = Object.keys(POSITIONS).filter(code => code[0] === categoryId);
   containerCodes.forEach(code => {
@@ -268,7 +264,7 @@ function initPins() {
   });
 }
 
-/* ─── DETAIL PANEL ─────────────────────────────────────────────────────── */
+/* ─── DETAIL PANEL ─────────────────────────────────────────────────── */
 function showContainerDetail(code) {
   closeAllPanels();
   const plant = PLANTS[code];
@@ -286,6 +282,7 @@ function showContainerDetail(code) {
   document.getElementById('detail-content').innerHTML = content;
   document.getElementById('detail-panel').classList.add('open');
   openPanel = 'detail';
+  setTimeout(() => fitStage(), 100);
 }
 
 function showPlantDetail(plantName) {
@@ -399,12 +396,15 @@ function initMapControls() {
   viewport.addEventListener('pointerup', endPointer);
   viewport.addEventListener('pointercancel', endPointer);
   viewport.addEventListener('pointerleave', endPointer);
-  const zoomInBtn = document.getElementById('zoom-in');
-  const zoomOutBtn = document.getElementById('zoom-out');
-  const zoomCenterBtn = document.getElementById('zoom-center');
-  if (zoomInBtn) zoomInBtn.addEventListener('click', () => { const rect = viewport.getBoundingClientRect(); zoomAt(rect.left + rect.width / 2, rect.top + rect.height / 2, 1.3); });
-  if (zoomOutBtn) zoomOutBtn.addEventListener('click', () => { const rect = viewport.getBoundingClientRect(); zoomAt(rect.left + rect.width / 2, rect.top + rect.height / 2, 1 / 1.3); });
-  if (zoomCenterBtn) zoomCenterBtn.addEventListener('click', () => fitStage());
+  document.getElementById('zoom-in').onclick = () => {
+    const rect = viewport.getBoundingClientRect();
+    zoomAt(rect.left + rect.width / 2, rect.top + rect.height / 2, 1.3);
+  };
+  document.getElementById('zoom-out').onclick = () => {
+    const rect = viewport.getBoundingClientRect();
+    zoomAt(rect.left + rect.width / 2, rect.top + rect.height / 2, 1 / 1.3);
+  };
+  document.getElementById('zoom-center').onclick = () => fitStage();
   window.addEventListener('resize', () => fitStage());
 }
 
