@@ -1,4 +1,4 @@
-/* ─── GLOBAL STATE ─────────────────────────────────────────────────────────── */
+/* ─── GLOBAL STATE ───────────────────────────────────────────────────────────── */
 let currentLang = 'sv';
 let highlightedPlant = null;
 let openPanel = null;
@@ -9,7 +9,7 @@ let minScale = 0.3, maxScale = 6;
 
 const pinEls = {};
 
-/* ─── LANGUAGE DEFINITIONS (expandable) ─────────────────────────────────────── */
+/* ─── LANGUAGE DEFINITIONS (expandable) ────────────────────────────────────────── */
 const LANGUAGES = [
   { code: 'sv', name: 'Svenska', flag: '🇸🇪' },
   { code: 'en', name: 'English', flag: '🇬🇧' },
@@ -47,7 +47,7 @@ const LANGUAGES = [
   { code: 'tr', name: 'Türkçe', flag: '🇹🇷' },
 ];
 
-/* ─── INITIALIZATION ────────────────────────────────────────────────────────── */
+/* ─── INITIALIZATION ───────────────────────────────────────────────────────────── */
 window.addEventListener('DOMContentLoaded', () => {
   initLanguagePanel();
   initPlantPanel();
@@ -65,7 +65,7 @@ window.addEventListener('DOMContentLoaded', () => {
   observer.observe(document.getElementById('detail-panel'), { attributes: true, attributeFilter: ['class'] });
 });
 
-/* ─── LANGUAGE PANEL ────────────────────────────────────────────────────────── */
+/* ─── LANGUAGE PANEL ───────────────────────────────────────────────────────────── */
 function initLanguagePanel() {
   const grid = document.getElementById('lang-grid');
   LANGUAGES.forEach(lang => {
@@ -109,7 +109,7 @@ function closeLangPanel() {
   if (openPanel === 'lang') openPanel = null;
 }
 
-/* ─── PLANT PANEL ────────────────────────────────────────────────────────── */
+/* ─── PLANT PANEL ───────────────────────────────────────────────────────────────── */
 function initPlantPanel() {
   renderCategoryButtons();
   updatePlantList();
@@ -230,7 +230,7 @@ function selectPlant(plantName) {
   });
 }
 
-/* ─── PIN INITIALIZATION ─────────────────────────────────────────────────── */
+/* ─── PIN INITIALIZATION ───────────────────────────────────────────────────────── */
 function pinSVG(hex) {
   return `<svg viewBox="0 0 24 34" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.37 0 0 5.37 0 12c0 9 12 22 12 22S24 21 24 12C24 5.37 18.63 0 12 0z" fill="${hex}" stroke="white" stroke-width="1.5"/><circle cx="12" cy="12" r="4" fill="white" fill-opacity="0.85"/></svg>`;
 }
@@ -264,7 +264,7 @@ function initPins() {
   });
 }
 
-/* ─── DETAIL PANEL ─────────────────────────────────────────────────── */
+/* ─── DETAIL PANEL ──────────────────────────────────────────────────────────── */
 function showContainerDetail(code) {
   closeAllPanels();
   const plant = PLANTS[code];
@@ -331,7 +331,7 @@ function closeAllPanels() {
   closeDetailPanel();
 }
 
-/* ─── MAP CONTROLS ─────────────────────────────────────────────────── */
+/* ─── MAP CONTROLS ──────────────────────────────────────────────────────────────── */
 function initMapControls() {
   const viewport = document.getElementById('map-viewport');
   viewport.addEventListener('wheel', (e) => {
