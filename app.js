@@ -3,7 +3,6 @@ let currentLang = 'sv';
 let highlightedPlant = null;
 let openPanel = null;
 
-const IMG_W = 564, IMG_H = 930;
 let scale = 1, tx = 0, ty = 0;
 let minScale = 0.3, maxScale = 6;
 
