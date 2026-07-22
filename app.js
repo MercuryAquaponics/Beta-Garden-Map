@@ -2,6 +2,7 @@
 let currentLang = 'sv';
 let highlightedPlant = null;
 let openPanel = null;
+let selectedCategory = null;
 
 let scale = 1, tx = 0, ty = 0;
 let minScale = 0.3, maxScale = 6;
@@ -83,8 +84,12 @@ function setLanguage(code) {
   const plantTitle = document.getElementById('plant-panel-title');
   plantTitle.textContent = currentLang === 'sv' ? 'Växter' : 'Plants';
 
-  // Update plant list
-  updatePlantList();
+  // Update plant list or category view
+  if (selectedCategory) {
+    showCategoryView(selectedCategory);
+  } else {
+    updatePlantList();
+  }
 
   // Update detail panel if open
   if (openPanel === 'detail') {
@@ -107,13 +112,51 @@ function closeLangPanel() {
 
 /* ─── PLANT PANEL ──────────────────────────────────────────────────────── */
 function initPlantPanel() {
+  renderCategoryButtons();
   updatePlantList();
-  document.getElementById('plant-panel-title').textContent = 'Växter';
+  document.getElementById('plant-panel-title').textContent = currentLang === 'sv' ? 'Växter' : 'Plants';
+}
+
+function renderCategoryButtons() {
+  const list = document.getElementById('plant-list');
+  list.innerHTML = '';
+
+  // Create category filter buttons
+  const categoryContainer = document.createElement('div');
+  categoryContainer.className = 'category-buttons';
+
+  CATEGORIES.forEach(cat => {
+    const btn = document.createElement('button');
+    btn.className = 'category-btn';
+    if (selectedCategory === cat.id) btn.classList.add('active');
+    btn.textContent = cat.label[currentLang];
+    btn.style.borderColor = cat.hex;
+    btn.style.color = cat.hex;
+    btn.onclick = () => showCategoryView(cat.id);
+    categoryContainer.appendChild(btn);
+  });
+
+  list.appendChild(categoryContainer);
+
+  // Divider
+  const divider = document.createElement('div');
+  divider.style.height = '1px';
+  divider.style.background = 'var(--parchment)';
+  divider.style.margin = '12px 0';
+  list.appendChild(divider);
+
+  // Plant list section
+  const plantListContainer = document.createElement('div');
+  plantListContainer.id = 'plant-items';
+  list.appendChild(plantListContainer);
+
+  updatePlantList();
 }
 
 function updatePlantList() {
-  const list = document.getElementById('plant-list');
-  list.innerHTML = '';
+  const listContainer = document.getElementById('plant-items');
+  if (!listContainer) return;
+  listContainer.innerHTML = '';
 
   // Get unique plants
   const uniquePlants = new Set();
@@ -132,8 +175,54 @@ function updatePlantList() {
     if (plantName === highlightedPlant) item.classList.add('active');
     item.textContent = plantName;
     item.onclick = () => selectPlant(plantName);
-    list.appendChild(item);
+    listContainer.appendChild(item);
   });
+}
+
+function showCategoryView(categoryId) {
+  selectedCategory = categoryId;
+  const category = CATEGORIES.find(c => c.id === categoryId);
+  const listContainer = document.getElementById('plant-items');
+  if (!listContainer) return;
+  listContainer.innerHTML = '';
+
+  // Update button states
+  document.querySelectorAll('.category-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  event.target.classList.add('active');
+
+  // Get all containers in this category
+  const containerCodes = Object.keys(POSITIONS).filter(code => code[0] === categoryId);
+  
+  containerCodes.forEach(code => {
+    const plant = PLANTS[code];
+    const containerDiv = document.createElement('div');
+    containerDiv.className = 'category-container-item';
+    containerDiv.style.borderLeftColor = category.hex;
+    
+    const codeSpan = document.createElement('div');
+    codeSpan.className = 'container-code';
+    codeSpan.textContent = code;
+    
+    const plantSpan = document.createElement('div');
+    plantSpan.className = 'container-plants';
+    plantSpan.textContent = plant && plant[currentLang] ? plant[currentLang] : (currentLang === 'sv' ? '(Tom)' : '(Empty)');
+    
+    containerDiv.appendChild(codeSpan);
+    containerDiv.appendChild(plantSpan);
+    containerDiv.onclick = () => showContainerDetail(code);
+    
+    listContainer.appendChild(containerDiv);
+  });
+}
+
+function clearCategoryFilter() {
+  selectedCategory = null;
+  document.querySelectorAll('.category-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  updatePlantList();
 }
 
 function selectPlant(plantName) {
@@ -286,7 +375,8 @@ function closePlantPanel() {
   document.getElementById('plant-panel').classList.remove('open');
   if (openPanel === 'plant') openPanel = null;
   highlightedPlant = null;
-  updatePlantList();
+  selectedCategory = null;
+  renderCategoryButtons();
   document.querySelectorAll('.pin').forEach(pin => {
     pin.classList.remove('active-plant');
   });
