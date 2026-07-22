@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Clarion Garden Map</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="header-title">Clarion <span>Trädgård</span></div>
+  <div class="controls">
+    <button id="lang-btn" class="lang-flag-btn" title="Language">🌐</button>
+  </div>
+</header>
+
+<div id="content-wrap">
+  <!-- LANGUAGE PANEL -->
+  <div id="lang-panel" class="side-panel">
+    <div class="panel-header">
+      <span class="panel-title">Languages</span>
+      <button class="panel-close" onclick="closeLangPanel()">✕</button>
+    </div>
+    <div class="panel-body">
+      <div id="lang-grid"></div>
+    </div>
+  </div>
+
+  <!-- PLANT BROWSER PANEL -->
+  <div id="plant-panel" class="side-panel">
+    <div class="panel-header">
+      <span class="panel-title" id="plant-panel-title">Växter</span>
+      <button class="panel-close" onclick="closePlantPanel()">✕</button>
+    </div>
+    <div class="panel-body">
+      <div id="plant-list"></div>
+    </div>
+  </div>
+
+  <!-- DETAIL PANEL (Container or Plant) -->
+  <div id="detail-panel" class="side-panel">
+    <div class="panel-header">
+      <span class="panel-title" id="detail-title">—</span>
+      <button class="panel-close" onclick="closeDetailPanel()">✕</button>
+    </div>
+    <div class="panel-body">
+      <div id="detail-content"></div>
+    </div>
+  </div>
+
+  <!-- MAP VIEWPORT -->
+  <div id="map-viewport">
+    <div id="map-stage">
+      <img id="floor-img" src="Karta Clarion.jpg" alt="Garden Map">
+      <div id="pins-layer"></div>
+    </div>
+    <div id="zoom-controls">
+      <button id="zoom-in" title="Zoom in">+</button>
+      <button id="zoom-out" title="Zoom out">−</button>
+      <button id="zoom-reset" title="Reset">⤢</button>
+    </div>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
