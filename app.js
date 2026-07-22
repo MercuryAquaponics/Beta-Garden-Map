@@ -1,3 +1,449 @@
+/* ─── GLOBAL STATE ─────────────────────────────────────────────────────────── */
+let currentLang = 'sv';
+let highlightedPlant = null;
+let openPanel = null;
+let selectedCategory = null;
+
+let scale = 1, tx = 0, ty = 0;
+let minScale = 0.3, maxScale = 6;
+
+const pinEls = {};
+
+/* ─── LANGUAGE DEFINITIONS (expandable) ─────────────────────────────────────── */
+const LANGUAGES = [
+  { code: 'sv', name: 'Svenska', flag: '🇸🇪' },
+  { code: 'en', name: 'English', flag: '🇬🇧' },
+  { code: 'no', name: 'Norsk', flag: '🇳🇴' },
+  { code: 'da', name: 'Dansk', flag: '🇩🇰' },
+  { code: 'fi', name: 'Suomi', flag: '🇫🇮' },
+  { code: 'is', name: 'Íslenska', flag: '🇮🇸' },
+  { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
+  { code: 'fr', name: 'Français', flag: '🇫🇷' },
+  { code: 'es', name: 'Español', flag: '🇪🇸' },
+  { code: 'it', name: 'Italiano', flag: '🇮🇹' },
+  { code: 'pt', name: 'Português', flag: '🇵🇹' },
+  { code: 'nl', name: 'Nederlands', flag: '🇳🇱' },
+  { code: 'pl', name: 'Polski', flag: '🇵🇱' },
+  { code: 'cs', name: 'Čeština', flag: '🇨🇿' },
+  { code: 'sk', name: 'Slovenčina', flag: '🇸🇰' },
+  { code: 'hu', name: 'Magyar', flag: '🇭🇺' },
+  { code: 'ro', name: 'Română', flag: '🇷🇴' },
+  { code: 'bg', name: 'Български', flag: '🇧🇬' },
+  { code: 'el', name: 'Ελληνικά', flag: '🇬🇷' },
+  { code: 'hr', name: 'Hrvatski', flag: '🇭🇷' },
+  { code: 'sl', name: 'Slovenščina', flag: '🇸🇮' },
+  { code: 'et', name: 'Eesti', flag: '🇪🇪' },
+  { code: 'lv', name: 'Latviešu', flag: '🇱🇻' },
+  { code: 'lt', name: 'Lietuvių', flag: '🇱🇹' },
+  { code: 'ru', name: 'Русский', flag: '🇷🇺' },
+  { code: 'uk', name: 'Українська', flag: '🇺🇦' },
+  { code: 'zh', name: '中文', flag: '🇨🇳' },
+  { code: 'ja', name: '日本語', flag: '🇯🇵' },
+  { code: 'ko', name: '한국어', flag: '🇰🇷' },
+  { code: 'hi', name: 'हिन्दी', flag: '🇮🇳' },
+  { code: 'vi', name: 'Tiếng Việt', flag: '🇻🇳' },
+  { code: 'th', name: 'ไทย', flag: '🇹🇭' },
+  { code: 'ar', name: 'العربية', flag: '🇸🇦' },
+  { code: 'tr', name: 'Türkçe', flag: '🇹🇷' },
+];
+
+/* ─── INITIALIZATION ────────────────────────────────────────────────────────── */
+window.addEventListener('DOMContentLoaded', () => {
+  initLanguagePanel();
+  initPlantPanel();
+  initPins();
+  initMapControls();
+  
+  // Initial fit with delay to ensure DOM is ready
+  setTimeout(() => fitStage(), 100);
+  
+  // Refit map when panels open/close
+  const observer = new MutationObserver(() => {
+    setTimeout(() => fitStage(), 50);
+  });
+  
+  observer.observe(document.getElementById('lang-panel'), { attributes: true, attributeFilter: ['class'] });
+  observer.observe(document.getElementById('plant-panel'), { attributes: true, attributeFilter: ['class'] });
+  observer.observe(document.getElementById('detail-panel'), { attributes: true, attributeFilter: ['class'] });
+});
+
+/* ─── LANGUAGE PANEL ────────────────────────────────────────────────────────── */
+function initLanguagePanel() {
+  const grid = document.getElementById('lang-grid');
+  LANGUAGES.forEach(lang => {
+    const btn = document.createElement('button');
+    btn.className = 'lang-btn';
+    if (lang.code === currentLang) btn.classList.add('active');
+    btn.textContent = `${lang.flag} ${lang.name}`;
+    btn.onclick = () => setLanguage(lang.code);
+    grid.appendChild(btn);
+  });
+}
+
+function setLanguage(code) {
+  currentLang = code;
+  
+  // Update active button
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  event.target.classList.add('active');
+
+  // Update plant panel title
+  const plantTitle = document.getElementById('plant-panel-title');
+  plantTitle.textContent = currentLang === 'sv' ? 'Växter' : 'Plants';
+
+  // Update plant list or category view
+  if (selectedCategory) {
+    showCategoryView(selectedCategory);
+  } else {
+    updatePlantList();
+  }
+
+  // Update detail panel if open
+  if (openPanel === 'detail') {
+    updateDetailPanel();
+  }
+}
+
+function toggleLangPanel() {
+  if (openPanel === 'lang') {
+    closeLangPanel();
+  } else {
+    closeAllPanels();
+    document.getElementById('lang-panel').classList.add('open');
+    openPanel = 'lang';
+  }
+}
+
+function closeLangPanel() {
+  document.getElementById('lang-panel').classList.remove('open');
+  if (openPanel === 'lang') openPanel = null;
+}
+
+/* ─── PLANT PANEL ────────────────────────────────────────────────────────── */
+function initPlantPanel() {
+  renderCategoryButtons();
+  updatePlantList();
+  document.getElementById('plant-panel-title').textContent = currentLang === 'sv' ? 'Växter' : 'Plants';
+}
+
+function togglePlantPanel() {
+  if (openPanel === 'plant') {
+    closePlantPanel();
+  } else {
+    closeAllPanels();
+    document.getElementById('plant-panel').classList.add('open');
+    openPanel = 'plant';
+  }
+}
+
+function renderCategoryButtons() {
+  const list = document.getElementById('plant-list');
+  list.innerHTML = '';
+
+  // Create category filter buttons
+  const categoryContainer = document.createElement('div');
+  categoryContainer.className = 'category-buttons';
+
+  CATEGORIES.forEach(cat => {
+    const btn = document.createElement('button');
+    btn.className = 'category-btn';
+    if (selectedCategory === cat.id) btn.classList.add('active');
+    btn.textContent = cat.label[currentLang];
+    btn.style.borderColor = cat.hex;
+    btn.style.color = cat.hex;
+    btn.onclick = () => {
+      if (selectedCategory === cat.id) {
+        clearCategoryFilter();
+      } else {
+        showCategoryView(cat.id);
+      }
+    };
+    categoryContainer.appendChild(btn);
+  });
+
+  list.appendChild(categoryContainer);
+
+  // Divider
+  const divider = document.createElement('div');
+  divider.style.height = '1px';
+  divider.style.background = 'var(--parchment)';
+  divider.style.margin = '12px 0';
+  list.appendChild(divider);
+
+  // Plant list section
+  const plantListContainer = document.createElement('div');
+  plantListContainer.id = 'plant-items';
+  list.appendChild(plantListContainer);
+
+  updatePlantList();
+}
+
+function updatePlantList() {
+  const listContainer = document.getElementById('plant-items');
+  if (!listContainer) return;
+  listContainer.innerHTML = '';
+
+  // Get unique plants
+  const uniquePlants = new Set();
+  Object.values(PLANTS).forEach(plant => {
+    if (plant[currentLang]) {
+      uniquePlants.add(plant[currentLang]);
+    }
+  });
+
+  // Sort alphabetically
+  const sortedPlants = Array.from(uniquePlants).sort();
+
+  sortedPlants.forEach(plantName => {
+    const item = document.createElement('div');
+    item.className = 'plant-item';
+    if (plantName === highlightedPlant) item.classList.add('active');
+    item.textContent = plantName;
+    item.onclick = () => selectPlantFromList(plantName);
+    listContainer.appendChild(item);
+  });
+}
+
+function selectPlantFromList(plantName) {
+  highlightedPlant = plantName;
+  showPlantDetail(plantName);
+}
+
+function showCategoryView(categoryId) {
+  selectedCategory = categoryId;
+  const category = CATEGORIES.find(c => c.id === categoryId);
+  const listContainer = document.getElementById('plant-items');
+  if (!listContainer) return;
+  listContainer.innerHTML = '';
+
+  // Update button states
+  document.querySelectorAll('.category-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  
+  // Find and activate the clicked button
+  const buttons = document.querySelectorAll('.category-btn');
+  buttons.forEach(btn => {
+    if (btn.textContent === category.label[currentLang]) {
+      btn.classList.add('active');
+    }
+  });
+
+  // Get all containers in this category
+  const containerCodes = Object.keys(POSITIONS).filter(code => code[0] === categoryId);
+  
+  containerCodes.forEach(code => {
+    const plant = PLANTS[code];
+    const containerDiv = document.createElement('div');
+    containerDiv.className = 'category-container-item';
+    containerDiv.style.borderLeftColor = category.hex;
+    
+    const codeSpan = document.createElement('div');
+    codeSpan.className = 'container-code';
+    codeSpan.textContent = code;
+    
+    const plantSpan = document.createElement('div');
+    plantSpan.className = 'container-plants';
+    plantSpan.textContent = plant && plant[currentLang] ? plant[currentLang] : (currentLang === 'sv' ? '(Tom)' : '(Empty)');
+    
+    containerDiv.appendChild(codeSpan);
+    containerDiv.appendChild(plantSpan);
+    containerDiv.onclick = () => showContainerDetail(code);
+    
+    listContainer.appendChild(containerDiv);
+  });
+}
+
+function clearCategoryFilter() {
+  selectedCategory = null;
+  document.querySelectorAll('.category-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  updatePlantList();
+}
+
+function selectPlant(plantName) {
+  highlightedPlant = plantName;
+  updatePlantList();
+
+  // Highlight containers with this plant
+  document.querySelectorAll('.pin').forEach(pin => {
+    const code = pin.dataset.code;
+    const plant = PLANTS[code];
+    const hasPlant = plant && (
+      plant[currentLang] === plantName ||
+      (plant[currentLang] && plant[currentLang].includes(plantName))
+    );
+    pin.classList.toggle('active-plant', hasPlant);
+  });
+}
+
+/* ─── PIN INITIALIZATION ────────────────────────────────────────────────────── */
+function pinSVG(hex) {
+  return `<svg viewBox="0 0 24 34" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 0C5.37 0 0 5.37 0 12c0 9 12 22 12 22S24 21 24 12C24 5.37 18.63 0 12 0z" fill="${hex}" stroke="white" stroke-width="1.5"/>
+    <circle cx="12" cy="12" r="4" fill="white" fill-opacity="0.85"/>
+  </svg>`;
+}
+
+function initPins() {
+  const pinsLayer = document.getElementById('pins-layer');
+  pinsLayer.innerHTML = '';
+
+  Object.keys(POSITIONS).forEach(code => {
+    const pos = POSITIONS[code];
+    const cat = CATEGORIES.find(c => c.id === code[0]);
+
+    const pin = document.createElement('div');
+    pin.className = 'pin';
+    pin.style.left = pos.x + '%';
+    pin.style.top = pos.y + '%';
+    pin.dataset.code = code;
+    pin.dataset.cat = cat.id;
+
+    const dot = document.createElement('div');
+    dot.className = 'pin-dot';
+    dot.innerHTML = pinSVG(cat.hex);
+
+    const label = document.createElement('div');
+    label.className = 'pin-label';
+    label.textContent = code;
+
+    pin.appendChild(dot);
+    pin.appendChild(label);
+    pin.onclick = (e) => {
+      e.stopPropagation();
+      showContainerDetail(code);
+    };
+
+    pinsLayer.appendChild(pin);
+    pinEls[code] = pin;
+  });
+}
+
+/* ─── DETAIL PANEL ────────────────────────────────────────────────────────── */
+function showContainerDetail(code) {
+  closeAllPanels();
+
+  const plant = PLANTS[code];
+  const cat = CATEGORIES.find(c => c.id === code[0]);
+
+  let plantContent = '';
+  if (plant && plant[currentLang]) {
+    const plants = plant[currentLang].split(' & ').map(p => p.trim());
+    plantContent = plants.map(p => 
+      `<div class="plant-name-link" onclick="showPlantDetail('${p}')">${p}</div>`
+    ).join('');
+  } else {
+    plantContent = `<div class="detail-value">${currentLang === 'sv' ? '(Tom)' : '(Empty)'}</div>`;
+  }
+
+  const backBtn = currentLang === 'sv' ? '← Tillbaka' : '← Back';
+  const content = `
+    <div style="margin-bottom: 16px;">
+      <button onclick="goBackToPlants()" style="background: var(--sage); color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer; font-weight: 600;">${backBtn}</button>
+    </div>
+    <div class="detail-section">
+      <span class="detail-label">${currentLang === 'sv' ? 'Behållare' : 'Container'}</span>
+      <span class="detail-value">${code}</span>
+    </div>
+    <div class="detail-section">
+      <span class="detail-label">${currentLang === 'sv' ? 'Typ' : 'Type'}</span>
+      <span class="detail-value">${cat.label[currentLang]}</span>
+    </div>
+    <div class="container-image">
+      [${currentLang === 'sv' ? 'Behållarebild' : 'Container image'}]
+    </div>
+    <div class="detail-section">
+      <span class="detail-label">${currentLang === 'sv' ? 'Växter' : 'Plants'}</span>
+      <div class="plant-list-in-container">
+        ${plantContent}
+      </div>
+    </div>
+  `;
+
+  document.getElementById('detail-title').textContent = `${currentLang === 'sv' ? 'Behållare' : 'Container'} ${code}`;
+  document.getElementById('detail-content').innerHTML = content;
+  document.getElementById('detail-panel').classList.add('open');
+  openPanel = 'detail';
+
+  // Refit after panel opens and HTML renders
+  setTimeout(() => fitStage(), 100);
+}
+
+function showPlantDetail(plantName) {
+  closeAllPanels();
+  
+  const backBtn = currentLang === 'sv' ? '← Tillbaka' : '← Back';
+  const content = `
+    <div style="margin-bottom: 16px;">
+      <button onclick="goBackToPlants()" style="background: var(--sage); color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer; font-weight: 600;">${backBtn}</button>
+    </div>
+    <div class="detail-section">
+      <span class="detail-label">${currentLang === 'sv' ? 'Beskrivning' : 'Description'}</span>
+      <div class="plant-description">
+        [${currentLang === 'sv' ? 'Växtbeskrivning - placeholder' : 'Plant description - placeholder'}]
+      </div>
+    </div>
+    <div class="detail-section">
+      <span class="detail-label">${currentLang === 'sv' ? 'Rätter' : 'Dishes'}</span>
+      <div class="gallery-grid">
+        <div class="gallery-item">[${currentLang === 'sv' ? 'Bild 1' : 'Image 1'}]</div>
+        <div class="gallery-item">[${currentLang === 'sv' ? 'Bild 2' : 'Image 2'}]</div>
+        <div class="gallery-item">[${currentLang === 'sv' ? 'Bild 3' : 'Image 3'}]</div>
+        <div class="gallery-item">[${currentLang === 'sv' ? 'Bild 4' : 'Image 4'}]</div>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('detail-title').textContent = plantName;
+  document.getElementById('detail-content').innerHTML = content;
+  document.getElementById('detail-panel').classList.add('open');
+  openPanel = 'detail';
+}
+
+function goBackToPlants() {
+  closeAllPanels();
+  document.getElementById('plant-panel').classList.add('open');
+  openPanel = 'plant';
+}
+
+function updateDetailPanel() {
+  if (openPanel === 'detail') {
+    const title = document.getElementById('detail-title').textContent;
+    // Re-render based on current title
+    if (title.startsWith('Container') || title.startsWith('Behållare')) {
+      const code = title.split(' ')[1];
+      showContainerDetail(code);
+    }
+  }
+}
+
+function closeDetailPanel() {
+  document.getElementById('detail-panel').classList.remove('open');
+  if (openPanel === 'detail') openPanel = null;
+}
+
+function closePlantPanel() {
+  document.getElementById('plant-panel').classList.remove('open');
+  if (openPanel === 'plant') openPanel = null;
+  highlightedPlant = null;
+  selectedCategory = null;
+  renderCategoryButtons();
+  document.querySelectorAll('.pin').forEach(pin => {
+    pin.classList.remove('active-plant');
+  });
+}
+
+function closeAllPanels() {
+  closeLangPanel();
+  closePlantPanel();
+  closeDetailPanel();
+}
+
+/* ─── MAP CONTROLS ────────────────────────────────────────────────────────── */
 function initMapControls() {
   const viewport = document.getElementById('map-viewport');
 
@@ -74,17 +520,83 @@ function initMapControls() {
   viewport.addEventListener('pointerleave', endPointer);
 
   // Buttons
-  document.getElementById('zoom-in').onclick = () => {
-    const rect = viewport.getBoundingClientRect();
-    zoomAt(rect.left + rect.width / 2, rect.top + rect.height / 2, 1.3);
-  };
-
-  document.getElementById('zoom-out').onclick = () => {
-    const rect = viewport.getBoundingClientRect();
-    zoomAt(rect.left + rect.width / 2, rect.top + rect.height / 2, 1 / 1.3);
-  };
-
-  document.getElementById('zoom-center').onclick = () => fitStage();
+  const zoomInBtn = document.getElementById('zoom-in');
+  const zoomOutBtn = document.getElementById('zoom-out');
+  const zoomCenterBtn = document.getElementById('zoom-center');
+  
+  if (zoomInBtn) {
+    zoomInBtn.onclick = () => {
+      const rect = viewport.getBoundingClientRect();
+      zoomAt(rect.left + rect.width / 2, rect.top + rect.height / 2, 1.3);
+    };
+  }
+  
+  if (zoomOutBtn) {
+    zoomOutBtn.onclick = () => {
+      const rect = viewport.getBoundingClientRect();
+      zoomAt(rect.left + rect.width / 2, rect.top + rect.height / 2, 1 / 1.3);
+    };
+  }
+  
+  if (zoomCenterBtn) {
+    zoomCenterBtn.onclick = () => fitStage();
+  }
 
   window.addEventListener('resize', () => fitStage());
+}
+
+function applyTransform() {
+  const stage = document.getElementById('map-stage');
+  stage.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`;
+  document.documentElement.style.setProperty('--zoom', scale);
+}
+
+function fitStage(padding = 20) {
+  const viewport = document.getElementById('map-viewport');
+  if (!viewport) return;
+  
+  const vw = viewport.clientWidth;
+  const vh = viewport.clientHeight;
+  
+  if (vw <= 0 || vh <= 0 || !IMG_W || !IMG_H) return;
+  
+  const s = Math.min((vw - padding * 2) / IMG_W, (vh - padding * 2) / IMG_H);
+  scale = Math.max(s, 0.05);
+  minScale = scale * 0.6;
+  maxScale = scale * 8;
+  
+  // Center image in the available viewport
+  const scaledWidth = IMG_W * scale;
+  const scaledHeight = IMG_H * scale;
+  tx = (vw - scaledWidth) / 2;
+  ty = (vh - scaledHeight) / 2;
+  applyTransform();
+}
+
+function zoomAt(clientX, clientY, factor) {
+  const viewport = document.getElementById('map-viewport');
+  const rect = viewport.getBoundingClientRect();
+  const px = clientX - rect.left;
+  const py = clientY - rect.top;
+  const newScale = Math.min(maxScale, Math.max(minScale, scale * factor));
+  const ratio = newScale / scale;
+  tx = px - (px - tx) * ratio;
+  ty = py - (py - ty) * ratio;
+  scale = newScale;
+  applyTransform();
+}
+
+function zoomToCode(code) {
+  const pos = POSITIONS[code];
+  if (!pos) return;
+  const imgX = (pos.x / 100) * IMG_W;
+  const imgY = (pos.y / 100) * IMG_H;
+  const viewport = document.getElementById('map-viewport');
+  const vw = viewport.clientWidth;
+  const vh = viewport.clientHeight;
+  scale = Math.min(maxScale, Math.max(scale, minScale * 3));
+  scale = Math.min(scale, 3);
+  tx = vw / 2 - imgX * scale;
+  ty = vh / 2 - imgY * scale - 20;
+  applyTransform();
 }
