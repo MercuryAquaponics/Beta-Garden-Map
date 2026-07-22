@@ -323,7 +323,7 @@ function initPins() {
   });
 }
 
-/* ─── DETAIL PANEL ──────────────────────────────────────────────────────────────── */
+/* ─── DETAIL PANEL ───────────────────────────────────────────────────────────── */
 function showContainerDetail(code) {
   closeAllPanels();
 
@@ -340,7 +340,11 @@ function showContainerDetail(code) {
     plantContent = `<div class="detail-value">${currentLang === 'sv' ? '(Tom)' : '(Empty)'}</div>`;
   }
 
+  const backBtn = currentLang === 'sv' ? '← Tillbaka' : '← Back';
   const content = `
+    <div style="margin-bottom: 16px;">
+      <button onclick="goBackToPlants()" style="background: var(--sage); color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer; font-weight: 600;">${backBtn}</button>
+    </div>
     <div class="detail-section">
       <span class="detail-label">${currentLang === 'sv' ? 'Behållare' : 'Container'}</span>
       <span class="detail-value">${code}</span>
@@ -439,7 +443,7 @@ function closeAllPanels() {
   closeDetailPanel();
 }
 
-/* ─── MAP CONTROLS ──────────────────────────────────────────────────────────────── */
+/* ─── MAP CONTROLS ───────────────────────────────────────────────────────────── */
 function initMapControls() {
   const viewport = document.getElementById('map-viewport');
 
@@ -550,7 +554,10 @@ function fitStage(padding = 20) {
   scale = Math.max(s, 0.05);
   minScale = scale * 0.6;
   maxScale = scale * 8;
-  tx = (vw - IMG_W * scale) / 2;
+  
+  // Center image in the available viewport width
+  const scaledWidth = IMG_W * scale;
+  tx = (vw - scaledWidth) / 2;
   ty = (vh - IMG_H * scale) / 2;
   applyTransform();
 }
