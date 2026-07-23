@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>Clarion Garden Map</title>
+<title>Clarion Hotel Stockholm — Trädgård</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,61 +12,72 @@
 <header>
   <div class="header-title">Clarion <span>Trädgård</span></div>
   <div class="controls">
-    <button id="plant-btn" class="lang-flag-btn" title="Plants" onclick="togglePlantPanel()">🌱</button>
-    <button id="lang-btn" class="lang-flag-btn" title="Language" onclick="toggleLangPanel()">🌐</button>
+    <div class="search-wrap">
+      <input type="text" id="search" placeholder="" autocomplete="off">
+      <div id="search-results"></div>
+    </div>
+    <button id="lang-btn" title="Language / Språk">🌐</button>
   </div>
+  <div class="layer-panel" id="layer-panel"></div>
 </header>
 
 <div id="content-wrap">
-  <!-- LANGUAGE PANEL -->
-  <div id="lang-panel" class="side-panel">
+
+  <!-- Language picker panel -->
+  <div class="side-panel" id="lang-panel">
     <div class="panel-header">
-      <span class="panel-title">Languages</span>
-      <button class="panel-close" onclick="closeLangPanel()">✕</button>
+      <span class="panel-title" id="lang-panel-title">Språk</span>
+      <button class="panel-close">✕</button>
     </div>
     <div class="panel-body">
       <div id="lang-grid"></div>
     </div>
   </div>
 
-  <!-- PLANT BROWSER PANEL -->
-  <div id="plant-panel" class="side-panel">
+  <!-- "Våra Växter" panel: category filters + species/container list -->
+  <div class="side-panel" id="plants-panel">
     <div class="panel-header">
-      <span class="panel-title" id="plant-panel-title">Växter</span>
-      <button class="panel-close" onclick="closePlantPanel()">✕</button>
+      <span class="panel-title" id="plants-panel-title">Växter</span>
+      <button class="panel-close">✕</button>
     </div>
     <div class="panel-body">
-      <div id="plant-list"></div>
+      <div class="category-buttons" id="category-buttons"></div>
+      <div id="plant-items"></div>
     </div>
   </div>
 
-  <!-- DETAIL PANEL (Container or Plant) -->
-  <div id="detail-panel" class="side-panel">
+  <!-- Detail panel: container page or species page -->
+  <div class="side-panel" id="detail-panel">
     <div class="panel-header">
-      <span class="panel-title" id="detail-title">—</span>
-      <button class="panel-close" onclick="closeDetailPanel()">✕</button>
+      <span class="panel-title" id="detail-panel-title">—</span>
+      <button class="panel-close">✕</button>
     </div>
     <div class="panel-body">
       <div id="detail-content"></div>
     </div>
   </div>
 
-  <!-- MAP VIEWPORT -->
   <div id="map-viewport">
     <div id="map-stage">
-      <img id="floor-img" src="Karta Clarion.jpg" alt="Garden Map">
+      <img id="floor-img" alt="Clarion Hotel Stockholm garden floor plan">
       <div id="pins-layer"></div>
     </div>
     <div id="zoom-controls">
-      <button id="zoom-in" title="Zoom in">+</button>
-      <button id="zoom-out" title="Zoom out">−</button>
-      <button id="zoom-center" title="Center">⊕</button>
+      <button id="zoom-in">+</button>
+      <button id="zoom-out">−</button>
+      <button id="zoom-center" title="Centrera">⊙</button>
     </div>
+    <div id="legend-box"></div>
   </div>
 </div>
 
 <script src="data.js"></script>
+<script>
+  // Wire the image src/dimensions from data.js before app.js runs
+  document.getElementById('floor-img').src = DATA.img.url;
+  document.getElementById('floor-img').width = DATA.img.w;
+  document.getElementById('floor-img').height = DATA.img.h;
+</script>
 <script src="app.js"></script>
-
 </body>
 </html>
