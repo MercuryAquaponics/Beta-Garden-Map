@@ -8,3 +8,8 @@ It features:
 * Planned feature: Individual pages for each plant, including a gallery of dishes that it is used in at the hotel.
 * Planned feature: Up-close pictures of each container if you click their pin.
 * Planned feature: Yearly change log, let the visitors see how the garden has grown year by year, keeping the old maps with their container placements, see which plants were grown each year and how the focus has changed.
+
+
+
+Inspect how the web-app looks right now:
+https://mercuryaquaponics.github.io/Beta-Garden-Map/
