@@ -44,11 +44,13 @@ function containerLatin(code) {
 // ─── HEADER: CATEGORY PILLS + "OUR PLANTS" PILL ────────────────────────────
 const layerPanel = document.getElementById('layer-panel');
 
+const PILL_ORDER = { R:1, F:2, T:4, K:5 };
 Object.keys(CATEGORIES).forEach(catId => {
   const cat = CATEGORIES[catId];
   const pill = document.createElement('label');
   pill.className = 'pill checked';
   pill.dataset.catId = catId;
+  pill.style.order = PILL_ORDER[catId] || 0;
   pill.innerHTML = `<input type="checkbox" checked><span class="dot" style="background:${cat.hex}"></span><span class="pill-label">${cat.label.sv}</span>`;
   pill.querySelector('input').addEventListener('change', e => {
     catVisible[catId] = e.target.checked;
