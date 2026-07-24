@@ -1,2 +1,2373 @@
-// Auto-generated data file for the Clarion Hotel Stockholm garden map
-const DATA = {"languages": [["sv", "Svenska"], ["en", "English"], ["no", "Norsk"], ["da", "Dansk"], ["fi", "Suomi"], ["is", "Íslenska"], ["de", "Deutsch"], ["fr", "Français"], ["es", "Español"], ["it", "Italiano"], ["pt", "Português"], ["nl", "Nederlands"], ["pl", "Polski"], ["cs", "Čeština"], ["hu", "Magyar"], ["ro", "Română"], ["bg", "Български"], ["el", "Ελληνικά"], ["hr", "Hrvatski"], ["et", "Eesti"], ["lv", "Latviešu"], ["lt", "Lietuvių"], ["ru", "Русский"], ["uk", "Українська"], ["zh", "中文"], ["ja", "日本語"], ["ko", "한국어"], ["vi", "Tiếng Việt"], ["th", "ไทย"], ["ar", "العربية"], ["tr", "Türkçe"]], "verifiedLangs": ["bg", "cs", "da", "de", "el", "en", "es", "fi", "fr", "hr", "hu", "it", "nl", "no", "pl", "pt", "ro", "ru", "sv", "uk"], "species": {"honeyberry": {"latin": "Lonicera caerulea", "names": {"sv": "Blåbärstry", "en": "Honeyberry", "no": "Blåtry", "da": "Blåbærtry", "fi": "Sinikuusama", "is": "Bláberjatoppur", "de": "Honigbeere", "fr": "Camérisier", "es": "Baya de miel", "it": "Camerisio", "pt": "Baga-de-mel", "nl": "Kamperfoeliebes", "pl": "Jagoda kamczacka", "cs": "Zimolez kamčatský", "hu": "Kamcsatkai mézbogyó", "ro": "Caprifoi de Kamceatka", "bg": "Медена боровинка", "el": "Μελόμουρο Καμτσάτκα", "hr": "Kamčatska borovnica", "et": "Sinikeri", "lv": "Kamčatkas zilene", "lt": "Sausmedžio uogos", "ru": "Жимолость съедобная", "uk": "Жимолость їстівна", "zh": "蓝靛果", "ja": "ハスカップ", "ko": "허니베리", "vi": "Cây kim ngân xanh", "th": "ฮันนี่เบอร์รี", "ar": "عسلية كامتشاتكا", "tr": "Mavi hanımeli"}}, "celery": {"latin": "Apium graveolens", "names": {"sv": "Selleri", "en": "Celery", "no": "Selleri", "da": "Selleri", "fi": "Selleri", "is": "Sellerí", "de": "Sellerie", "fr": "Céleri", "es": "Apio", "it": "Sedano", "pt": "Aipo", "nl": "Selderij", "pl": "Seler", "cs": "Celer", "hu": "Zeller", "ro": "Țelină", "bg": "Целина", "el": "Σέλινο", "hr": "Celer", "et": "Seller", "lv": "Selerijas", "lt": "Salierai", "ru": "Сельдерей", "uk": "Селера", "zh": "芹菜", "ja": "セロリ", "ko": "셀러리", "vi": "Cần tây", "th": "ขึ้นฉ่าย", "ar": "كرفس", "tr": "Kereviz"}}, "coriander": {"latin": "Coriandrum sativum", "names": {"sv": "Koriander", "en": "Coriander", "no": "Koriander", "da": "Koriander", "fi": "Korianteri", "is": "Kóríander", "de": "Koriander", "fr": "Coriandre", "es": "Cilantro", "it": "Coriandolo", "pt": "Coentro", "nl": "Koriander", "pl": "Kolendra", "cs": "Koriandr", "hu": "Koriander", "ro": "Coriandru", "bg": "Кориандър", "el": "Κόλιανδρος", "hr": "Korijandar", "et": "Koriander", "lv": "Koriandrs", "lt": "Kalendra", "ru": "Кориандр (кинза)", "uk": "Коріандр (кінза)", "zh": "香菜（芫荽）", "ja": "コリアンダー（パクチー）", "ko": "고수", "vi": "Rau mùi (Ngò)", "th": "ผักชี", "ar": "كزبرة", "tr": "Kişniş"}}, "tomato": {"latin": "Solanum lycopersicum", "names": {"sv": "Tomat", "en": "Tomato", "no": "Tomat", "da": "Tomat", "fi": "Tomaatti", "is": "Tómatur", "de": "Tomate", "fr": "Tomate", "es": "Tomate", "it": "Pomodoro", "pt": "Tomate", "nl": "Tomaat", "pl": "Pomidor", "cs": "Rajče", "hu": "Paradicsom", "ro": "Roșie", "bg": "Домат", "el": "Ντομάτα", "hr": "Rajčica", "et": "Tomat", "lv": "Tomāts", "lt": "Pomidoras", "ru": "Помидор", "uk": "Помідор", "zh": "番茄", "ja": "トマト", "ko": "토마토", "vi": "Cà chua", "th": "มะเขือเทศ", "ar": "طماطم", "tr": "Domates"}}, "tomatillo": {"latin": "Physalis philadelphica", "names": {"sv": "Tomatillo", "en": "Tomatillo", "no": "Tomatillo", "da": "Tomatillo", "fi": "Tomatillo", "is": "Tomatillo", "de": "Tomatillo", "fr": "Tomatillo", "es": "Tomatillo", "it": "Tomatillo", "pt": "Tomatillo", "nl": "Tomatillo", "pl": "Tomatillo", "cs": "Tomatillo", "hu": "Tomatillo", "ro": "Tomatillo", "bg": "Томатило", "el": "Τοματίγιο", "hr": "Tomatillo", "et": "Tomatillo", "lv": "Tomatillo", "lt": "Tomatilas", "ru": "Томатильо", "uk": "Томатильйо", "zh": "灯笼果", "ja": "トマティージョ", "ko": "토마티요", "vi": "Tomatillo", "th": "โทมาทิลโล", "ar": "طماطيو", "tr": "Tomatillo"}}, "mexican_oregano": {"latin": "Lippia graveolens", "names": {"sv": "Mexican Oregano", "en": "Mexican Oregano", "no": "Meksikansk oregano", "da": "Mexicansk oregano", "fi": "Meksikonoregano", "is": "Mexíkóskt oregano", "de": "Mexikanischer Oregano", "fr": "Origan mexicain", "es": "Orégano mexicano", "it": "Origano messicano", "pt": "Orégão mexicano", "nl": "Mexicaanse oregano", "pl": "Oregano meksykańskie", "cs": "Mexický oregano", "hu": "Mexikói oregánó", "ro": "Oregano mexican", "bg": "Мексиканско орегано", "el": "Μεξικανική ρίγανη", "hr": "Meksički origano", "et": "Mehhiko pune", "lv": "Meksikas raudene", "lt": "Meksikinis raudonėlis", "ru": "Мексиканский орегано", "uk": "Мексиканська орегано", "zh": "墨西哥牛至", "ja": "メキシカンオレガノ", "ko": "멕시칸 오레가노", "vi": "Kinh giới Mexico", "th": "ออริกาโนเม็กซิกัน", "ar": "زعتر مكسيكي", "tr": "Meksika kekiği"}}, "beans": {"latin": "Phaseolus vulgaris", "names": {"sv": "Bönor", "en": "Beans", "no": "Bønner", "da": "Bønner", "fi": "Pavut", "is": "Baunir", "de": "Bohnen", "fr": "Haricots", "es": "Frijoles", "it": "Fagioli", "pt": "Feijão", "nl": "Bonen", "pl": "Fasola", "cs": "Fazole", "hu": "Bab", "ro": "Fasole", "bg": "Боб", "el": "Φασόλια", "hr": "Grah", "et": "Oad", "lv": "Pupiņas", "lt": "Pupelės", "ru": "Фасоль", "uk": "Квасоля", "zh": "菜豆", "ja": "インゲン豆", "ko": "강낭콩", "vi": "Đậu", "th": "ถั่ว", "ar": "فاصوليا", "tr": "Fasulye"}}, "sugar_snap": {"latin": "Pisum sativum", "names": {"sv": "Sockerärtor", "en": "Sugar Snap Peas", "no": "Sukkererter", "da": "Sukkerærter", "fi": "Sokeriherne", "is": "Sykurbaunir", "de": "Zuckererbsen", "fr": "Pois mange-tout", "es": "Tirabeque", "it": "Taccole", "pt": "Ervilha-torta", "nl": "Suikererwt", "pl": "Groszek cukrowy", "cs": "Cukrový hrách", "hu": "Cukorborsó", "ro": "Mazăre de zahăr", "bg": "Захарен грах", "el": "Αρακάς ζάχαρης", "hr": "Šećerni grašak", "et": "Suhkruhernes", "lv": "Cukurzirņi", "lt": "Cukriniai žirniai", "ru": "Сахарный горошек", "uk": "Цукровий горошок", "zh": "甜脆豌豆", "ja": "スナップエンドウ", "ko": "슈가스냅 완두", "vi": "Đậu Hà Lan ngọt", "th": "ถั่วลันเตาหวาน", "ar": "بازلاء سكرية", "tr": "Şeker bezelyesi"}}, "basil": {"latin": "Ocimum basilicum", "names": {"sv": "Basilika", "en": "Basil", "no": "Basilikum", "da": "Basilikum", "fi": "Basilika", "is": "Basilíka", "de": "Basilikum", "fr": "Basilic", "es": "Albahaca", "it": "Basilico", "pt": "Manjericão", "nl": "Basilicum", "pl": "Bazylia", "cs": "Bazalka", "hu": "Bazsalikom", "ro": "Busuioc", "bg": "Босилек", "el": "Βασιλικός", "hr": "Bosiljak", "et": "Basiilik", "lv": "Baziliks", "lt": "Bazilikas", "ru": "Базилик", "uk": "Базилік", "zh": "罗勒", "ja": "バジル", "ko": "바질", "vi": "Húng quế", "th": "โหระพา", "ar": "ريحان", "tr": "Fesleğen"}}, "parsley": {"latin": "Petroselinum crispum", "names": {"sv": "Persilja", "en": "Parsley", "no": "Persille", "da": "Persille", "fi": "Persilja", "is": "Steinselja", "de": "Petersilie", "fr": "Persil", "es": "Perejil", "it": "Prezzemolo", "pt": "Salsa", "nl": "Peterselie", "pl": "Pietruszka", "cs": "Petržel", "hu": "Petrezselyem", "ro": "Pătrunjel", "bg": "Магданоз", "el": "Μαϊντανός", "hr": "Peršin", "et": "Petersell", "lv": "Pētersīļi", "lt": "Petražolė", "ru": "Петрушка", "uk": "Петрушка", "zh": "欧芹", "ja": "パセリ", "ko": "파슬리", "vi": "Mùi tây", "th": "ผักชีฝรั่ง", "ar": "بقدونس", "tr": "Maydanoz"}}, "mangold": {"latin": "Beta vulgaris subsp. vulgaris", "names": {"sv": "Mangold", "en": "Swiss Chard", "no": "Mangold", "da": "Mangold", "fi": "Lehtimangoldi", "is": "Blaðbeðja", "de": "Mangold", "fr": "Bette à carde", "es": "Acelga", "it": "Bietola", "pt": "Acelga", "nl": "Snijbiet", "pl": "Boćwina", "cs": "Mangold", "hu": "Mángold", "ro": "Mangold", "bg": "Манголд", "el": "Σέσκουλο", "hr": "Blitva", "et": "Lehtpeet", "lv": "Mangolds", "lt": "Mangoldas", "ru": "Мангольд", "uk": "Мангольд", "zh": "牛皮菜", "ja": "スイスチャード", "ko": "근대", "vi": "Cải cầu vồng", "th": "ผักโขมสวิส", "ar": "سلق", "tr": "Pazı"}}, "rosemary": {"latin": "Salvia rosmarinus", "names": {"sv": "Rosmarin", "en": "Rosemary", "no": "Rosmarin", "da": "Rosmarin", "fi": "Rosmariini", "is": "Rósmarín", "de": "Rosmarin", "fr": "Romarin", "es": "Romero", "it": "Rosmarino", "pt": "Alecrim", "nl": "Rozemarijn", "pl": "Rozmaryn", "cs": "Rozmarýn", "hu": "Rozmaring", "ro": "Rozmarin", "bg": "Розмарин", "el": "Δεντρολίβανο", "hr": "Ružmarin", "et": "Rosmariin", "lv": "Rozmarīns", "lt": "Rozmarinas", "ru": "Розмарин", "uk": "Розмарин", "zh": "迷迭香", "ja": "ローズマリー", "ko": "로즈마리", "vi": "Hương thảo", "th": "โรสแมรี่", "ar": "إكليل الجبل", "tr": "Biberiye"}}, "oregano": {"latin": "Origanum vulgare", "names": {"sv": "Oregano", "en": "Oregano", "no": "Oregano", "da": "Oregano", "fi": "Oregano", "is": "Oregano", "de": "Oregano", "fr": "Origan", "es": "Orégano", "it": "Origano", "pt": "Orégão", "nl": "Oregano", "pl": "Oregano", "cs": "Oregano", "hu": "Oregánó", "ro": "Oregano", "bg": "Риган", "el": "Ρίγανη", "hr": "Origano", "et": "Pune", "lv": "Raudene", "lt": "Raudonėlis", "ru": "Орегано (душица)", "uk": "Орегано (материнка)", "zh": "牛至", "ja": "オレガノ", "ko": "오레가노", "vi": "Kinh giới (Oregano)", "th": "ออริกาโน", "ar": "أوريغانو", "tr": "Kekik"}}, "rhubarb": {"latin": "Rheum rhabarbarum", "names": {"sv": "Rabarber", "en": "Rhubarb", "no": "Rabarbra", "da": "Rabarber", "fi": "Raparperi", "is": "Rabarbari", "de": "Rhabarber", "fr": "Rhubarbe", "es": "Ruibarbo", "it": "Rabarbaro", "pt": "Ruibarbo", "nl": "Rabarber", "pl": "Rabarbar", "cs": "Reveň", "hu": "Rebarbara", "ro": "Rubarbă", "bg": "Ревен", "el": "Ραβέντι", "hr": "Rabarbara", "et": "Rabarber", "lv": "Rabarberi", "lt": "Rabarbaras", "ru": "Ревень", "uk": "Ревінь", "zh": "大黄", "ja": "ルバーブ", "ko": "루바브", "vi": "Đại hoàng", "th": "รูบาร์บ", "ar": "راوند", "tr": "Ravent"}}, "red_currant": {"latin": "Ribes rubrum", "names": {"sv": "Röda Vinbär", "en": "Red Currant", "no": "Rips", "da": "Ribs", "fi": "Punaherukka", "is": "Rifsber", "de": "Rote Johannisbeere", "fr": "Groseille rouge", "es": "Grosella roja", "it": "Ribes rosso", "pt": "Groselha vermelha", "nl": "Rode bes", "pl": "Czerwona porzeczka", "cs": "Rybíz červený", "hu": "Piros ribizli", "ro": "Coacăze roșii", "bg": "Червено френско грозде", "el": "Κόκκινη φραγκοστάφυλο", "hr": "Crveni ribiz", "et": "Punane sõstar", "lv": "Sarkanās jāņogas", "lt": "Raudonieji serbentai", "ru": "Красная смородина", "uk": "Червона смородина", "zh": "红醋栗", "ja": "赤スグリ", "ko": "레드커런트", "vi": "Lý chua đỏ", "th": "เรดเคอแรนท์", "ar": "كشمش أحمر", "tr": "Kırmızı frenk üzümü"}}, "gooseberry": {"latin": "Ribes uva-crispa", "names": {"sv": "Krusbär", "en": "Gooseberry", "no": "Stikkelsbær", "da": "Stikkelsbær", "fi": "Karviainen", "is": "Stikilsber", "de": "Stachelbeere", "fr": "Groseille à maquereau", "es": "Grosella espinosa", "it": "Uva spina", "pt": "Groselha espinhosa", "nl": "Kruisbes", "pl": "Agrest", "cs": "Angrešt", "hu": "Egres", "ro": "Agrișe", "bg": "Цариградско грозде", "el": "Φραγκοστάφυλο", "hr": "Ogrozd", "et": "Karusmari", "lv": "Ērkšķogas", "lt": "Agrastai", "ru": "Крыжовник", "uk": "Аґрус", "zh": "醋栗", "ja": "グーズベリー", "ko": "구스베리", "vi": "Lý gai", "th": "กูสเบอร์รี", "ar": "عنب الثعلب", "tr": "Bektaşi üzümü"}}, "blackcurrant": {"latin": "Ribes nigrum", "names": {"sv": "Svarta Vinbär", "en": "Blackcurrant", "no": "Solbær", "da": "Solbær", "fi": "Mustaherukka", "is": "Sólber", "de": "Schwarze Johannisbeere", "fr": "Cassis", "es": "Grosella negra", "it": "Ribes nero", "pt": "Groselha preta (Cassis)", "nl": "Zwarte bes", "pl": "Czarna porzeczka", "cs": "Rybíz černý", "hu": "Fekete ribizli", "ro": "Coacăze negre", "bg": "Черно френско грозде", "el": "Μαύρο φραγκοστάφυλο", "hr": "Crni ribiz", "et": "Must sõstar", "lv": "Upenes", "lt": "Juodieji serbentai", "ru": "Чёрная смородина", "uk": "Чорна смородина", "zh": "黑加仑", "ja": "カシス（黒スグリ）", "ko": "블랙커런트", "vi": "Lý chua đen", "th": "แบล็กเคอแรนท์", "ar": "كشمش أسود", "tr": "Siyah frenk üzümü"}}, "blackberry": {"latin": "Rubus fruticosus agg.", "names": {"sv": "Björnbär", "en": "Blackberry", "no": "Bjørnebær", "da": "Brombær", "fi": "Karhunvatukka", "is": "Brómber", "de": "Brombeere", "fr": "Mûre", "es": "Mora", "it": "Mora", "pt": "Amora", "nl": "Braam", "pl": "Jeżyna", "cs": "Ostružina", "hu": "Szeder", "ro": "Mure", "bg": "Къпина", "el": "Βατόμουρο", "hr": "Kupina", "et": "Aedmurakas", "lv": "Kazenes", "lt": "Gervuogė", "ru": "Ежевика", "uk": "Ожина", "zh": "黑莓", "ja": "ブラックベリー", "ko": "블랙베리", "vi": "Mâm xôi đen", "th": "แบล็กเบอร์รี", "ar": "توت العليق", "tr": "Böğürtlen"}}, "strawberry": {"latin": "Fragaria × ananassa", "names": {"sv": "Jordgubbar", "en": "Strawberry", "no": "Jordbær", "da": "Jordbær", "fi": "Mansikka", "is": "Jarðarber", "de": "Erdbeere", "fr": "Fraise", "es": "Fresa", "it": "Fragola", "pt": "Morango", "nl": "Aardbei", "pl": "Truskawka", "cs": "Jahoda", "hu": "Eper", "ro": "Căpșuni", "bg": "Ягода", "el": "Φράουλα", "hr": "Jagoda", "et": "Maasikas", "lv": "Zemenes", "lt": "Braškė", "ru": "Клубника", "uk": "Полуниця", "zh": "草莓", "ja": "イチゴ", "ko": "딸기", "vi": "Dâu tây", "th": "สตรอว์เบอร์รี", "ar": "فراولة", "tr": "Çilek"}}, "jerusalem_artichoke": {"latin": "Helianthus tuberosus", "names": {"sv": "Jordärtskockor", "en": "Jerusalem Artichoke", "no": "Jordskokk", "da": "Jordskok", "fi": "Maa-artisokka", "is": "Ætiþistill frá Jerúsalem", "de": "Topinambur", "fr": "Topinambour", "es": "Tupinambo", "it": "Topinambur", "pt": "Tupinambo", "nl": "Aardpeer", "pl": "Topinambur", "cs": "Topinambur", "hu": "Csicsóka", "ro": "Topinambur", "bg": "Топинамбур", "el": "Ηλίανθος ο κονδυλώδης", "hr": "Čičoka", "et": "Maapirn", "lv": "Topinambūrs", "lt": "Topinambas", "ru": "Топинамбур", "uk": "Топінамбур", "zh": "菊芋", "ja": "キクイモ", "ko": "돼지감자", "vi": "Atiso Jerusalem", "th": "แก่นตะวัน", "ar": "خرشوف القدس", "tr": "Yer elması"}}, "tarragon": {"latin": "Artemisia dracunculus", "names": {"sv": "Dragon", "en": "Tarragon", "no": "Estragon", "da": "Estragon", "fi": "Rakuuna", "is": "Esdragon", "de": "Estragon", "fr": "Estragon", "es": "Estragón", "it": "Dragoncello", "pt": "Estragão", "nl": "Dragon", "pl": "Estragon", "cs": "Estragon", "hu": "Tárkony", "ro": "Tarhon", "bg": "Естрагон", "el": "Εστραγκόν", "hr": "Estragon", "et": "Estragon", "lv": "Estragons", "lt": "Estragonas", "ru": "Тархун", "uk": "Естрагон", "zh": "龙蒿", "ja": "タラゴン", "ko": "타라곤", "vi": "Ngải giấm", "th": "ทาร์รากอน", "ar": "طرخون", "tr": "Tarhun"}}, "chives": {"latin": "Allium schoenoprasum", "names": {"sv": "Gräslök", "en": "Chives", "no": "Gressløk", "da": "Purløg", "fi": "Ruohosipuli", "is": "Graslaukur", "de": "Schnittlauch", "fr": "Ciboulette", "es": "Cebollino", "it": "Erba cipollina", "pt": "Cebolinho", "nl": "Bieslook", "pl": "Szczypiorek", "cs": "Pažitka", "hu": "Metélőhagyma", "ro": "Arpagic", "bg": "Лук резанец", "el": "Σχοινόπρασο", "hr": "Vlasac", "et": "Murulauk", "lv": "Maurloks", "lt": "Laiškiniai česnakai", "ru": "Шнитт-лук", "uk": "Різанець", "zh": "细香葱", "ja": "チャイブ", "ko": "차이브", "vi": "Hẹ tây", "th": "ชีฟส์", "ar": "ثوم معمر", "tr": "Kaya soğanı"}}, "chili": {"latin": "Capsicum annuum", "names": {"sv": "Chili", "en": "Chili", "no": "Chili", "da": "Chili", "fi": "Chili", "is": "Chili", "de": "Chili", "fr": "Piment", "es": "Chile", "it": "Peperoncino", "pt": "Malagueta", "nl": "Chili", "pl": "Chili", "cs": "Chilli paprička", "hu": "Chili", "ro": "Chili", "bg": "Чили", "el": "Τσίλι", "hr": "Čili", "et": "Tšilli", "lv": "Čili", "lt": "Čili", "ru": "Чили", "uk": "Чилі", "zh": "辣椒", "ja": "チリペッパー", "ko": "칠리 고추", "vi": "Ớt", "th": "พริก", "ar": "فلفل حار", "tr": "Acı biber"}}, "cucumber": {"latin": "Cucumis sativus", "names": {"sv": "Gurka", "en": "Cucumber", "no": "Agurk", "da": "Agurk", "fi": "Kurkku", "is": "Gúrka", "de": "Gurke", "fr": "Concombre", "es": "Pepino", "it": "Cetriolo", "pt": "Pepino", "nl": "Komkommer", "pl": "Ogórek", "cs": "Okurka", "hu": "Uborka", "ro": "Castravete", "bg": "Краставица", "el": "Αγγούρι", "hr": "Krastavac", "et": "Kurk", "lv": "Gurķis", "lt": "Agurkas", "ru": "Огурец", "uk": "Огірок", "zh": "黄瓜", "ja": "キュウリ", "ko": "오이", "vi": "Dưa chuột", "th": "แตงกวา", "ar": "خيار", "tr": "Salatalık"}}, "zucchini": {"latin": "Cucurbita pepo", "names": {"sv": "Zucchini", "en": "Zucchini", "no": "Squash", "da": "Squash", "fi": "Kesäkurpitsa", "is": "Kúrbítur", "de": "Zucchini", "fr": "Courgette", "es": "Calabacín", "it": "Zucchina", "pt": "Abobrinha", "nl": "Courgette", "pl": "Cukinia", "cs": "Cuketa", "hu": "Cukkini", "ro": "Dovlecel", "bg": "Тиквичка", "el": "Κολοκυθάκι", "hr": "Tikvica", "et": "Suvikõrvits", "lv": "Kabacis", "lt": "Cukinija", "ru": "Кабачок", "uk": "Кабачок", "zh": "西葫芦", "ja": "ズッキーニ", "ko": "애호박", "vi": "Bí ngòi", "th": "ซูกินี", "ar": "كوسة", "tr": "Kabak"}}}, "categories": {"R": {"hex": "#4f7a48", "label": {"sv": "Rektangulära Odlingskärl", "en": "Rectangular Planters", "no": "Rektangulære dyrkingskar", "da": "Rektangulære plantekar", "fi": "Suorakaiteen kasvatuslaatikot", "is": "Rétthyrndir ræktunarkassar", "de": "Rechteckige Pflanzkästen", "fr": "Bacs rectangulaires", "es": "Jardineras rectangulares", "it": "Fioriere rettangolari", "pt": "Floreiras retangulares", "nl": "Rechthoekige plantenbakken", "pl": "Prostokątne skrzynki", "cs": "Obdélníkové truhlíky", "hu": "Téglalap alakú növénytartók", "ro": "Ghivece dreptunghiulare", "bg": "Правоъгълни лехи", "el": "Ορθογώνιες γλάστρες", "hr": "Pravokutne sadilice", "et": "Ristkülikukujulised kastid", "lv": "Taisnstūra dobes", "lt": "Stačiakampės lysvės", "ru": "Прямоугольные грядки", "uk": "Прямокутні грядки", "zh": "长方形种植箱", "ja": "長方形の栽培コンテナ", "ko": "직사각형 화단", "vi": "Chậu trồng hình chữ nhật", "th": "กระบะปลูกทรงสี่เหลี่ยมผืนผ้า", "ar": "أحواض زراعة مستطيلة", "tr": "Dikdörtgen ekim kapları"}}, "F": {"hex": "#c9a227", "label": {"sv": "Fyrkantiga Odlingskärl", "en": "Square Planters", "no": "Firkantede dyrkingskar", "da": "Firkantede plantekar", "fi": "Neliönmuotoiset kasvatuslaatikot", "is": "Ferkantaðir ræktunarkassar", "de": "Quadratische Pflanzkästen", "fr": "Bacs carrés", "es": "Jardineras cuadradas", "it": "Fioriere quadrate", "pt": "Floreiras quadradas", "nl": "Vierkante plantenbakken", "pl": "Kwadratowe skrzynki", "cs": "Čtvercové truhlíky", "hu": "Négyzet alakú növénytartók", "ro": "Ghivece pătrate", "bg": "Квадратни лехи", "el": "Τετράγωνες γλάστρες", "hr": "Kvadratne sadilice", "et": "Ruudukujulised kastid", "lv": "Kvadrātveida dobes", "lt": "Kvadratinės lysvės", "ru": "Квадратные грядки", "uk": "Квадратні грядки", "zh": "正方形种植箱", "ja": "正方形の栽培コンテナ", "ko": "정사각형 화단", "vi": "Chậu trồng hình vuông", "th": "กระบะปลูกทรงสี่เหลี่ยมจัตุรัส", "ar": "أحواض زراعة مربعة", "tr": "Kare ekim kapları"}}, "T": {"hex": "#8a8f87", "label": {"sv": "Triangulära Odlingskärl", "en": "Triangular Planters", "no": "Trekantede dyrkingskar", "da": "Trekantede plantekar", "fi": "Kolmion muotoiset kasvatuslaatikot", "is": "Þríhyrndir ræktunarkassar", "de": "Dreieckige Pflanzkästen", "fr": "Bacs triangulaires", "es": "Jardineras triangulares", "it": "Fioriere triangolari", "pt": "Floreiras triangulares", "nl": "Driehoekige plantenbakken", "pl": "Trójkątne skrzynki", "cs": "Trojúhelníkové truhlíky", "hu": "Háromszög alakú növénytartók", "ro": "Ghivece triunghiulare", "bg": "Триъгълни лехи", "el": "Τριγωνικές γλάστρες", "hr": "Trokutaste sadilice", "et": "Kolmnurksed kastid", "lv": "Trīsstūra dobes", "lt": "Trikampės lysvės", "ru": "Треугольные грядки", "uk": "Трикутні грядки", "zh": "三角形种植箱", "ja": "三角形の栽培コンテナ", "ko": "삼각형 화단", "vi": "Chậu trồng hình tam giác", "th": "กระบะปลูกทรงสามเหลี่ยม", "ar": "أحواض زراعة مثلثة", "tr": "Üçgen ekim kapları"}}, "K": {"hex": "#7c5c3e", "label": {"sv": "Runda Krukor", "en": "Round Pots", "no": "Runde potter", "da": "Runde krukker", "fi": "Pyöreät ruukut", "is": "Kringlóttir pottar", "de": "Runde Töpfe", "fr": "Pots ronds", "es": "Macetas redondas", "it": "Vasi rotondi", "pt": "Vasos redondos", "nl": "Ronde potten", "pl": "Okrągłe donice", "cs": "Kulaté květináče", "hu": "Kerek cserepek", "ro": "Ghivece rotunde", "bg": "Кръгли саксии", "el": "Στρογγυλές γλάστρες", "hr": "Okrugle tegle", "et": "Ümarad potid", "lv": "Apaļi podi", "lt": "Apvalūs vazonai", "ru": "Круглые горшки", "uk": "Круглі горщики", "zh": "圆形花盆", "ja": "丸い鉢", "ko": "둥근 화분", "vi": "Chậu tròn", "th": "กระถางทรงกลม", "ar": "أواني دائرية", "tr": "Yuvarlak saksılar"}}}, "ui": {"searchPlaceholder": {"sv": "Sök efter växt", "en": "Search planters…", "no": "Søk i plantekar…", "da": "Søg plantekar…", "fi": "Etsi kasvatuslaatikoita…", "is": "Leita í ræktunarkössum…", "de": "Pflanzkästen durchsuchen…", "fr": "Rechercher des bacs…", "es": "Buscar jardineras…", "it": "Cerca fioriere…", "pt": "Pesquisar floreiras…", "nl": "Plantenbakken zoeken…", "pl": "Szukaj skrzynek…", "cs": "Hledat truhlíky…", "hu": "Növénytartók keresése…", "ro": "Caută ghivece…", "bg": "Търсене на лехи…", "el": "Αναζήτηση γλαστρών…", "hr": "Pretraži sadilice…", "et": "Otsi kasvukaste…", "lv": "Meklēt dobes…", "lt": "Ieškoti lysvių…", "ru": "Поиск грядок…", "uk": "Пошук грядок…", "zh": "搜索种植箱…", "ja": "栽培容器を検索…", "ko": "화단 검색…", "vi": "Tìm chậu trồng…", "th": "ค้นหากระบะปลูก…", "ar": "البحث عن الأحواض…", "tr": "Ekim kaplarını ara…"}, "marker": {"sv": "Markör", "en": "Marker", "no": "Markør", "da": "Markør", "fi": "Merkki", "is": "Merki", "de": "Markierung", "fr": "Repère", "es": "Marcador", "it": "Indicatore", "pt": "Marcador", "nl": "Markering", "pl": "Znacznik", "cs": "Značka", "hu": "Jelölő", "ro": "Marcaj", "bg": "Маркер", "el": "Δείκτης", "hr": "Oznaka", "et": "Marker", "lv": "Marķieris", "lt": "Žymeklis", "ru": "Метка", "uk": "Мітка", "zh": "标记", "ja": "マーカー", "ko": "마커", "vi": "Ký hiệu", "th": "เครื่องหมาย", "ar": "علامة", "tr": "İşaretçi"}, "latinLabel": {"sv": "Latinskt namn", "en": "Latin name", "no": "Latinsk navn", "da": "Latinsk navn", "fi": "Latinankielinen nimi", "is": "Latneskt heiti", "de": "Lateinischer Name", "fr": "Nom latin", "es": "Nombre latino", "it": "Nome latino", "pt": "Nome latino", "nl": "Latijnse naam", "pl": "Nazwa łacińska", "cs": "Latinský název", "hu": "Latin név", "ro": "Nume latin", "bg": "Латинско име", "el": "Λατινικό όνομα", "hr": "Latinski naziv", "et": "Ladinakeelne nimi", "lv": "Latīniskais nosaukums", "lt": "Lotyniškas pavadinimas", "ru": "Латинское название", "uk": "Латинська назва", "zh": "拉丁名", "ja": "ラテン語名", "ko": "학명(라틴어)", "vi": "Tên Latinh", "th": "ชื่อละติน", "ar": "الاسم اللاتيني", "tr": "Latince adı"}, "empty": {"sv": "Tom", "en": "Empty", "no": "Tom", "da": "Tom", "fi": "Tyhjä", "is": "Tómt", "de": "Leer", "fr": "Vide", "es": "Vacío", "it": "Vuoto", "pt": "Vazio", "nl": "Leeg", "pl": "Puste", "cs": "Prázdné", "hu": "Üres", "ro": "Gol", "bg": "Празно", "el": "Κενό", "hr": "Prazno", "et": "Tühi", "lv": "Tukšs", "lt": "Tuščia", "ru": "Пусто", "uk": "Порожньо", "zh": "空", "ja": "空き", "ko": "비어있음", "vi": "Trống", "th": "ว่าง", "ar": "فارغ", "tr": "Boş"}, "listTitle": {"sv": "Lista", "en": "List", "no": "Liste", "da": "Liste", "fi": "Luettelo", "is": "Listi", "de": "Liste", "fr": "Liste", "es": "Lista", "it": "Elenco", "pt": "Lista", "nl": "Lijst", "pl": "Lista", "cs": "Seznam", "hu": "Lista", "ro": "Listă", "bg": "Списък", "el": "Λίστα", "hr": "Popis", "et": "Loend", "lv": "Saraksts", "lt": "Sąrašas", "ru": "Список", "uk": "Список", "zh": "列表", "ja": "リスト", "ko": "목록", "vi": "Danh sách", "th": "รายการ", "ar": "قائمة", "tr": "Liste"}, "ourPlants": {"sv": "Våra Växter", "en": "Our Plants", "no": "Våre Planter", "da": "Vores Planter", "fi": "Kasvimme", "is": "Plönturnar okkar", "de": "Unsere Pflanzen", "fr": "Nos Plantes", "es": "Nuestras Plantas", "it": "Le Nostre Piante", "pt": "Nossas Plantas", "nl": "Onze Planten", "pl": "Nasze Rośliny", "cs": "Naše Rostliny", "hu": "Növényeink", "ro": "Plantele Noastre", "bg": "Нашите Растения", "el": "Τα Φυτά μας", "hr": "Naše Biljke", "et": "Meie Taimed", "lv": "Mūsu Augi", "lt": "Mūsų Augalai", "ru": "Наши Растения", "uk": "Наші Рослини", "zh": "我们的植物", "ja": "私たちの植物", "ko": "우리의 식물", "vi": "Cây Trồng Của Chúng Tôi", "th": "พืชของเรา", "ar": "نباتاتنا", "tr": "Bitkilerimiz"}, "back": {"sv": "Tillbaka", "en": "Back", "no": "Tilbake", "da": "Tilbage", "fi": "Takaisin", "is": "Til baka", "de": "Zurück", "fr": "Retour", "es": "Atrás", "it": "Indietro", "pt": "Voltar", "nl": "Terug", "pl": "Wstecz", "cs": "Zpět", "hu": "Vissza", "ro": "Înapoi", "bg": "Назад", "el": "Πίσω", "hr": "Natrag", "et": "Tagasi", "lv": "Atpakaļ", "lt": "Atgal", "ru": "Назад", "uk": "Назад", "zh": "返回", "ja": "戻る", "ko": "뒤로", "vi": "Quay lại", "th": "กลับ", "ar": "رجوع", "tr": "Geri"}, "container": {"sv": "Behållare", "en": "Container", "no": "Beholder", "da": "Beholder", "fi": "Kasvatuslaatikko", "is": "Ílát", "de": "Behälter", "fr": "Bac", "es": "Jardinera", "it": "Contenitore", "pt": "Recipiente", "nl": "Bak", "pl": "Pojemnik", "cs": "Nádoba", "hu": "Tartály", "ro": "Recipient", "bg": "Съд", "el": "Δοχείο", "hr": "Spremnik", "et": "Anum", "lv": "Trauks", "lt": "Talpykla", "ru": "Контейнер", "uk": "Контейнер", "zh": "容器", "ja": "コンテナ", "ko": "용기", "vi": "Thùng chứa", "th": "ภาชนะ", "ar": "وعاء", "tr": "Kap"}, "type": {"sv": "Typ", "en": "Type", "no": "Type", "da": "Type", "fi": "Tyyppi", "is": "Tegund", "de": "Typ", "fr": "Type", "es": "Tipo", "it": "Tipo", "pt": "Tipo", "nl": "Type", "pl": "Typ", "cs": "Typ", "hu": "Típus", "ro": "Tip", "bg": "Тип", "el": "Τύπος", "hr": "Vrsta", "et": "Tüüp", "lv": "Veids", "lt": "Tipas", "ru": "Тип", "uk": "Тип", "zh": "类型", "ja": "タイプ", "ko": "유형", "vi": "Loại", "th": "ประเภท", "ar": "النوع", "tr": "Tür"}, "plants": {"sv": "Växter", "en": "Plants", "no": "Planter", "da": "Planter", "fi": "Kasvit", "is": "Plöntur", "de": "Pflanzen", "fr": "Plantes", "es": "Plantas", "it": "Piante", "pt": "Plantas", "nl": "Planten", "pl": "Rośliny", "cs": "Rostliny", "hu": "Növények", "ro": "Plante", "bg": "Растения", "el": "Φυτά", "hr": "Biljke", "et": "Taimed", "lv": "Augi", "lt": "Augalai", "ru": "Растения", "uk": "Рослини", "zh": "植物", "ja": "植物", "ko": "식물", "vi": "Cây", "th": "พืช", "ar": "نباتات", "tr": "Bitkiler"}, "description": {"sv": "Beskrivning", "en": "Description", "no": "Beskrivelse", "da": "Beskrivelse", "fi": "Kuvaus", "is": "Lýsing", "de": "Beschreibung", "fr": "Description", "es": "Descripción", "it": "Descrizione", "pt": "Descrição", "nl": "Beschrijving", "pl": "Opis", "cs": "Popis", "hu": "Leírás", "ro": "Descriere", "bg": "Описание", "el": "Περιγραφή", "hr": "Opis", "et": "Kirjeldus", "lv": "Apraksts", "lt": "Aprašymas", "ru": "Описание", "uk": "Опис", "zh": "描述", "ja": "説明", "ko": "설명", "vi": "Mô tả", "th": "คำอธิบาย", "ar": "الوصف", "tr": "Açıklama"}, "dishes": {"sv": "Rätter", "en": "Dishes", "no": "Retter", "da": "Retter", "fi": "Ruokalajit", "is": "Réttir", "de": "Gerichte", "fr": "Plats", "es": "Platos", "it": "Piatti", "pt": "Pratos", "nl": "Gerechten", "pl": "Dania", "cs": "Jídla", "hu": "Ételek", "ro": "Feluri de mâncare", "bg": "Ястия", "el": "Πιάτα", "hr": "Jela", "et": "Road", "lv": "Ēdieni", "lt": "Patiekalai", "ru": "Блюда", "uk": "Страви", "zh": "菜肴", "ja": "料理", "ko": "요리", "vi": "Món ăn", "th": "อาหาร", "ar": "أطباق", "tr": "Yemekler"}, "noDescriptionYet": {"sv": "[Beskrivning kommer snart]", "en": "[Description coming soon]", "no": "[Beskrivelse kommer snart]", "da": "[Beskrivelse kommer snart]", "fi": "[Kuvaus tulossa pian]", "is": "[Lýsing væntanleg]", "de": "[Beschreibung folgt in Kürze]", "fr": "[Description à venir]", "es": "[Descripción próximamente]", "it": "[Descrizione in arrivo]", "pt": "[Descrição em breve]", "nl": "[Beschrijving komt binnenkort]", "pl": "[Opis wkrótce]", "cs": "[Popis brzy]", "hu": "[Leírás hamarosan]", "ro": "[Descriere în curând]", "bg": "[Описанието скоро]", "el": "[Περιγραφή σύντομα]", "hr": "[Opis uskoro]", "et": "[Kirjeldus varsti]", "lv": "[Apraksts drīzumā]", "lt": "[Aprašymas netrukus]", "ru": "[Описание скоро появится]", "uk": "[Опис незабаром]", "zh": "[描述即将推出]", "ja": "[説明は近日公開]", "ko": "[설명 준비 중]", "vi": "[Mô tả sắp có]", "th": "[คำอธิบายเร็วๆ นี้]", "ar": "[الوصف قريبًا]", "tr": "[Açıklama yakında]"}, "englishFallbackNote": {"sv": "Beskrivning finns endast på svenska och engelska. Visar engelska.", "en": "Description available in Swedish and English only.", "no": "Beskrivelsen finnes bare på svensk og engelsk. Viser engelsk.", "da": "Beskrivelsen findes kun på svensk og engelsk. Viser engelsk.", "fi": "Kuvaus on saatavilla vain ruotsiksi ja englanniksi. Näytetään englanniksi.", "is": "Lýsing er aðeins til á sænsku og ensku. Sýnir ensku.", "de": "Beschreibung nur auf Schwedisch und Englisch verfügbar. Englisch wird angezeigt.", "fr": "Description disponible uniquement en suédois et en anglais. Affichage en anglais.", "es": "Descripción disponible solo en sueco e inglés. Mostrando inglés.", "it": "Descrizione disponibile solo in svedese e inglese. Viene mostrato l'inglese.", "pt": "Descrição disponível apenas em sueco e inglês. A mostrar em inglês.", "nl": "Beschrijving alleen beschikbaar in het Zweeds en Engels. Toont Engels.", "pl": "Opis dostępny tylko w języku szwedzkim i angielskim. Wyświetlono angielski.", "cs": "Popis je dostupný pouze ve švédštině a angličtině. Zobrazena angličtina.", "hu": "A leírás csak svédül és angolul érhető el. Angol nyelven jelenik meg.", "ro": "Descrierea este disponibilă doar în suedeză și engleză. Se afișează engleza.", "bg": "Описанието е налично само на шведски и английски. Показва се на английски.", "el": "Η περιγραφή είναι διαθέσιμη μόνο στα σουηδικά και αγγλικά. Εμφανίζεται στα αγγλικά.", "hr": "Opis je dostupan samo na švedskom i engleskom. Prikazan je engleski.", "et": "Kirjeldus on saadaval ainult rootsi ja inglise keeles. Kuvatakse inglise keeles.", "lv": "Apraksts pieejams tikai zviedru un angļu valodā. Tiek rādīts angļu valodā.", "lt": "Aprašymas pateikiamas tik švedų ir anglų kalbomis. Rodoma anglų kalba.", "ru": "Описание доступно только на шведском и английском. Показан английский.", "uk": "Опис доступний лише шведською та англійською. Показано англійською.", "zh": "描述仅提供瑞典语和英语版本，目前显示英语。", "ja": "説明はスウェーデン語と英語のみです。英語を表示しています。", "ko": "설명은 스웨덴어와 영어로만 제공됩니다. 영어로 표시됩니다.", "vi": "Mô tả chỉ có bằng tiếng Thụy Điển và tiếng Anh. Đang hiển thị tiếng Anh.", "th": "คำอธิบายมีเฉพาะภาษาสวีเดนและอังกฤษ กำลังแสดงภาษาอังกฤษ", "ar": "الوصف متوفر باللغتين السويدية والإنجليزية فقط. يتم عرض الإنجليزية.", "tr": "Açıklama yalnızca İsveççe ve İngilizce olarak mevcuttur. İngilizce gösteriliyor."}, "languagesTitle": {"sv": "Språk", "en": "Languages", "no": "Språk", "da": "Sprog", "fi": "Kielet", "is": "Tungumál", "de": "Sprachen", "fr": "Langues", "es": "Idiomas", "it": "Lingue", "pt": "Idiomas", "nl": "Talen", "pl": "Języki", "cs": "Jazyky", "hu": "Nyelvek", "ro": "Limbi", "bg": "Езици", "el": "Γλώσσες", "hr": "Jezici", "et": "Keeled", "lv": "Valodas", "lt": "Kalbos", "ru": "Языки", "uk": "Мови", "zh": "语言", "ja": "言語", "ko": "언어", "vi": "Ngôn ngữ", "th": "ภาษา", "ar": "اللغات", "tr": "Diller"}, "close": {"sv": "Stäng", "en": "Close", "no": "Lukk", "da": "Luk", "fi": "Sulje", "is": "Loka", "de": "Schließen", "fr": "Fermer", "es": "Cerrar", "it": "Chiudi", "pt": "Fechar", "nl": "Sluiten", "pl": "Zamknij", "cs": "Zavřít", "hu": "Bezárás", "ro": "Închide", "bg": "Затвори", "el": "Κλείσιμο", "hr": "Zatvori", "et": "Sulge", "lv": "Aizvērt", "lt": "Uždaryti", "ru": "Закрыть", "uk": "Закрити", "zh": "关闭", "ja": "閉じる", "ko": "닫기", "vi": "Đóng", "th": "ปิด", "ar": "إغلاق", "tr": "Kapat"}}, "containers": {"R1": {"species": ["honeyberry"], "joiner": "&"}, "R2": {"species": ["honeyberry"], "joiner": "&"}, "R3": {"species": ["celery"], "joiner": "&"}, "R4": {"species": ["celery"], "joiner": "&"}, "R5": {"species": ["coriander", "tomato"], "joiner": "&"}, "R6": {"species": ["tomatillo"], "joiner": "&"}, "R7": {"species": ["mexican_oregano"], "joiner": "&"}, "R8": {"species": ["tomato"], "joiner": "&"}, "R10": {"species": ["tomato"], "joiner": "&"}, "R12": {"species": ["tomato"], "joiner": "&"}, "R9": {"species": ["beans"], "joiner": "&"}, "R11": {"species": ["sugar_snap"], "joiner": "&"}, "R13": {"species": ["basil"], "joiner": "&"}, "R14": {"species": ["tomato", "basil"], "joiner": "&"}, "R15": {"species": [], "joiner": "&"}, "R16": {"species": ["parsley", "mangold"], "joiner": "&"}, "R17": {"species": ["rosemary"], "joiner": "&"}, "R18": {"species": ["oregano"], "joiner": "&"}, "R19": {"species": ["parsley", "mangold", "sugar_snap"], "joiner": "&"}, "R20": {"species": ["mangold"], "joiner": "&"}, "R21": {"species": ["parsley"], "joiner": "&"}, "R22": {"species": ["rhubarb"], "joiner": "&"}, "R23": {"species": ["rhubarb"], "joiner": "&"}, "F1": {"species": ["red_currant"], "joiner": "&"}, "F7": {"species": ["red_currant"], "joiner": "&"}, "F2": {"species": ["gooseberry"], "joiner": "&"}, "F4": {"species": ["gooseberry"], "joiner": "&"}, "F6": {"species": ["gooseberry"], "joiner": "&"}, "F3": {"species": ["blackcurrant"], "joiner": "&"}, "F5": {"species": ["blackcurrant"], "joiner": "&"}, "F8": {"species": ["blackberry"], "joiner": "&"}, "T1": {"species": ["strawberry"], "joiner": "&"}, "T2": {"species": ["strawberry"], "joiner": "&"}, "T6": {"species": ["strawberry"], "joiner": "&"}, "T7": {"species": ["strawberry"], "joiner": "&"}, "T3": {"species": ["jerusalem_artichoke"], "joiner": "&"}, "T4": {"species": ["oregano", "gooseberry"], "joiner": "&"}, "T5": {"species": ["tarragon", "red_currant"], "joiner": "&"}, "T8": {"species": ["chives"], "joiner": "&"}, "T9": {"species": ["tarragon"], "joiner": "&"}, "K1": {"species": ["chili"], "joiner": "&"}, "K2": {"species": ["tomato"], "joiner": "&"}, "K3": {"species": ["tomato"], "joiner": "&"}, "K4": {"species": ["tomato"], "joiner": "&"}, "K5": {"species": ["cucumber", "zucchini"], "joiner": "/"}, "K6": {"species": ["cucumber", "zucchini"], "joiner": "/"}, "K7": {"species": ["cucumber", "zucchini"], "joiner": "/"}, "K8": {"species": ["cucumber", "zucchini"], "joiner": "/"}, "K9": {"species": ["beans"], "joiner": "&"}, "K11": {"species": ["beans"], "joiner": "&"}, "K10": {"species": ["sugar_snap"], "joiner": "&"}}, "positions": {"R1": {"x": 33.64, "y": 6.36}, "R2": {"x": 73.3, "y": 6.02}, "R3": {"x": 46.58, "y": 12.48}, "R4": {"x": 57.42, "y": 12.91}, "R5": {"x": 46.4, "y": 20.03}, "R6": {"x": 57.43, "y": 17.39}, "R7": {"x": 46.4, "y": 25.79}, "R8": {"x": 57.42, "y": 21.75}, "R9": {"x": 46.58, "y": 32.43}, "R10": {"x": 57.43, "y": 26.12}, "R11": {"x": 46.58, "y": 36.8}, "R12": {"x": 57.43, "y": 32.7}, "R13": {"x": 47.11, "y": 47.58}, "R14": {"x": 57.42, "y": 37.07}, "R15": {"x": 57.43, "y": 40.64}, "R16": {"x": 57.43, "y": 43.92}, "R17": {"x": 47.11, "y": 56.31}, "R18": {"x": 57.42, "y": 48.28}, "R19": {"x": 82.27, "y": 52.69}, "R20": {"x": 57.43, "y": 52.65}, "R21": {"x": 57.6, "y": 62.73}, "R22": {"x": 74.48, "y": 74.28}, "R23": {"x": 74.49, "y": 78.64}, "F1": {"x": 46.94, "y": 6.28}, "F2": {"x": 59.74, "y": 6.29}, "F3": {"x": 46.37, "y": 16.27}, "F4": {"x": 57.4, "y": 29.43}, "F5": {"x": 46.91, "y": 40.64}, "F6": {"x": 57.4, "y": 56.71}, "F7": {"x": 46.73, "y": 62.96}, "F8": {"x": 79.61, "y": 58.97}, "T1": {"x": 20.91, "y": 10.92}, "T2": {"x": 84.0, "y": 9.52}, "T3": {"x": 20.91, "y": 23.22}, "T4": {"x": 83.83, "y": 22.03}, "T5": {"x": 20.55, "y": 35.62}, "T6": {"x": 84.53, "y": 34.97}, "T7": {"x": 20.38, "y": 47.7}, "T8": {"x": 86.85, "y": 47.05}, "T9": {"x": 20.91, "y": 58.48}, "K1": {"x": 80.94, "y": 5.74}, "K2": {"x": 79.34, "y": 15.33}, "K3": {"x": 79.16, "y": 18.46}, "K4": {"x": 63.7, "y": 19.86}, "K5": {"x": 57.3, "y": 40.46}, "K6": {"x": 46.99, "y": 44.13}, "K7": {"x": 46.64, "y": 60.52}, "K8": {"x": 57.48, "y": 59.33}, "K9": {"x": 74.9, "y": 65.69}, "K10": {"x": 75.07, "y": 67.53}, "K11": {"x": 75.25, "y": 69.9}}, "img": {"url": "https://raw.githubusercontent.com/MercuryAquaponics/Beta-Garden-Map/main/Karta%20Clarion.jpg", "w": 420, "h": 688}, "plantInfo": {"honeyberry": {"sv": null, "en": null, "dishes": []}, "celery": {"sv": null, "en": null, "dishes": []}, "coriander": {"sv": null, "en": null, "dishes": []}, "tomato": {"sv": null, "en": null, "dishes": []}, "tomatillo": {"sv": null, "en": null, "dishes": []}, "mexican_oregano": {"sv": null, "en": null, "dishes": []}, "beans": {"sv": null, "en": null, "dishes": []}, "sugar_snap": {"sv": null, "en": null, "dishes": []}, "basil": {"sv": null, "en": null, "dishes": []}, "parsley": {"sv": null, "en": null, "dishes": []}, "mangold": {"sv": null, "en": null, "dishes": []}, "rosemary": {"sv": null, "en": null, "dishes": []}, "oregano": {"sv": null, "en": null, "dishes": []}, "rhubarb": {"sv": null, "en": null, "dishes": []}, "red_currant": {"sv": null, "en": null, "dishes": []}, "gooseberry": {"sv": null, "en": null, "dishes": []}, "blackcurrant": {"sv": null, "en": null, "dishes": []}, "blackberry": {"sv": null, "en": null, "dishes": []}, "strawberry": {"sv": null, "en": null, "dishes": []}, "jerusalem_artichoke": {"sv": null, "en": null, "dishes": []}, "tarragon": {"sv": null, "en": null, "dishes": []}, "chives": {"sv": null, "en": null, "dishes": []}, "chili": {"sv": null, "en": null, "dishes": []}, "cucumber": {"sv": null, "en": null, "dishes": []}, "zucchini": {"sv": null, "en": null, "dishes": []}}};
+// ======================================================================
+// CLARION HOTEL STOCKHOLM — GARDEN MAP DATA
+// ======================================================================
+// This file is plain JavaScript (not strict JSON), so these comments are
+// allowed to live here permanently — edit this file directly, save, and
+// re-upload it to the repo alongside the other files.
+//
+// QUICK GUIDE — what to edit for each task:
+//   • Add a container photo         -> "containerImages" section below
+//   • Add/edit a plant description  -> "plantInfo" section, find the species id
+//   • Add a dish photo/ingredients  -> "plantInfo" -> that species -> "dishes"
+//   • Add a brand new plant species -> "species" AND "containers" sections
+//   • Change any button/label text  -> "ui" section
+//   • Change a category name        -> "categories" section
+// ======================================================================
+
+const DATA = {
+
+  // ---- LANGUAGES ------------------------------------------------------
+  // Each entry is [code, native name shown in the language picker].
+  "languages": [
+    ["sv", "Svenska"],
+    ["en", "English"],
+    ["no", "Norsk"],
+    ["da", "Dansk"],
+    ["fi", "Suomi"],
+    ["is", "Íslenska"],
+    ["de", "Deutsch"],
+    ["fr", "Français"],
+    ["es", "Español"],
+    ["it", "Italiano"],
+    ["pt", "Português"],
+    ["nl", "Nederlands"],
+    ["pl", "Polski"],
+    ["cs", "Čeština"],
+    ["hu", "Magyar"],
+    ["ro", "Română"],
+    ["bg", "Български"],
+    ["el", "Ελληνικά"],
+    ["hr", "Hrvatski"],
+    ["et", "Eesti"],
+    ["lv", "Latviešu"],
+    ["lt", "Lietuvių"],
+    ["ru", "Русский"],
+    ["uk", "Українська"],
+    ["zh", "中文"],
+    ["ja", "日本語"],
+    ["ko", "한국어"],
+    ["vi", "Tiếng Việt"],
+    ["th", "ไทย"],
+    ["ar", "العربية"],
+    ["tr", "Türkçe"]
+  ],
+
+  // Languages I'm confident translating without a native speaker checking.
+  // Any language code NOT in this list gets a small "*" next to it in the
+  // language picker, as a heads-up that it's machine-translated.
+  "verifiedLangs": [
+    "bg",
+    "cs",
+    "da",
+    "de",
+    "el",
+    "en",
+    "es",
+    "fi",
+    "fr",
+    "hr",
+    "hu",
+    "it",
+    "nl",
+    "no",
+    "pl",
+    "pt",
+    "ro",
+    "ru",
+    "sv",
+    "uk"
+  ],
+
+  // ---- PLANT SPECIES ----------------------------------------------------
+  // One entry per real plant SPECIES (not per planter/container).
+  // "latin"  = scientific name, always shown as a secondary reference.
+  // "names"  = translated common name per language code.
+  // If a language is missing from "names", the app automatically shows
+  // the English name instead of breaking — so you do NOT need to fill in
+  // all 31 languages to add a new plant. sv + en is enough to work; more
+  // is nicer.
+  //
+  // TO ADD A NEW PLANT: add a new entry here with a unique lowercase id
+  // (e.g. "mint"), then reference that id in the "containers" section
+  // below wherever it's actually planted.
+  "species": {
+    "honeyberry": {
+      "latin": "Lonicera caerulea",
+      "names": {
+        "sv": "Blåbärstry",
+        "en": "Honeyberry",
+        "no": "Blåtry",
+        "da": "Blåbærtry",
+        "fi": "Sinikuusama",
+        "is": "Bláberjatoppur",
+        "de": "Honigbeere",
+        "fr": "Camérisier",
+        "es": "Baya de miel",
+        "it": "Camerisio",
+        "pt": "Baga-de-mel",
+        "nl": "Kamperfoeliebes",
+        "pl": "Jagoda kamczacka",
+        "cs": "Zimolez kamčatský",
+        "hu": "Kamcsatkai mézbogyó",
+        "ro": "Caprifoi de Kamceatka",
+        "bg": "Медена боровинка",
+        "el": "Μελόμουρο Καμτσάτκα",
+        "hr": "Kamčatska borovnica",
+        "et": "Sinikeri",
+        "lv": "Kamčatkas zilene",
+        "lt": "Sausmedžio uogos",
+        "ru": "Жимолость съедобная",
+        "uk": "Жимолость їстівна",
+        "zh": "蓝靛果",
+        "ja": "ハスカップ",
+        "ko": "허니베리",
+        "vi": "Cây kim ngân xanh",
+        "th": "ฮันนี่เบอร์รี",
+        "ar": "عسلية كامتشاتكا",
+        "tr": "Mavi hanımeli"
+      }
+    },
+    "celery": {
+      "latin": "Apium graveolens",
+      "names": {
+        "sv": "Selleri",
+        "en": "Celery",
+        "no": "Selleri",
+        "da": "Selleri",
+        "fi": "Selleri",
+        "is": "Sellerí",
+        "de": "Sellerie",
+        "fr": "Céleri",
+        "es": "Apio",
+        "it": "Sedano",
+        "pt": "Aipo",
+        "nl": "Selderij",
+        "pl": "Seler",
+        "cs": "Celer",
+        "hu": "Zeller",
+        "ro": "Țelină",
+        "bg": "Целина",
+        "el": "Σέλινο",
+        "hr": "Celer",
+        "et": "Seller",
+        "lv": "Selerijas",
+        "lt": "Salierai",
+        "ru": "Сельдерей",
+        "uk": "Селера",
+        "zh": "芹菜",
+        "ja": "セロリ",
+        "ko": "셀러리",
+        "vi": "Cần tây",
+        "th": "ขึ้นฉ่าย",
+        "ar": "كرفس",
+        "tr": "Kereviz"
+      }
+    },
+    "coriander": {
+      "latin": "Coriandrum sativum",
+      "names": {
+        "sv": "Koriander",
+        "en": "Coriander",
+        "no": "Koriander",
+        "da": "Koriander",
+        "fi": "Korianteri",
+        "is": "Kóríander",
+        "de": "Koriander",
+        "fr": "Coriandre",
+        "es": "Cilantro",
+        "it": "Coriandolo",
+        "pt": "Coentro",
+        "nl": "Koriander",
+        "pl": "Kolendra",
+        "cs": "Koriandr",
+        "hu": "Koriander",
+        "ro": "Coriandru",
+        "bg": "Кориандър",
+        "el": "Κόλιανδρος",
+        "hr": "Korijandar",
+        "et": "Koriander",
+        "lv": "Koriandrs",
+        "lt": "Kalendra",
+        "ru": "Кориандр (кинза)",
+        "uk": "Коріандр (кінза)",
+        "zh": "香菜（芫荽）",
+        "ja": "コリアンダー（パクチー）",
+        "ko": "고수",
+        "vi": "Rau mùi (Ngò)",
+        "th": "ผักชี",
+        "ar": "كزبرة",
+        "tr": "Kişniş"
+      }
+    },
+    "tomato": {
+      "latin": "Solanum lycopersicum",
+      "names": {
+        "sv": "Tomat",
+        "en": "Tomato",
+        "no": "Tomat",
+        "da": "Tomat",
+        "fi": "Tomaatti",
+        "is": "Tómatur",
+        "de": "Tomate",
+        "fr": "Tomate",
+        "es": "Tomate",
+        "it": "Pomodoro",
+        "pt": "Tomate",
+        "nl": "Tomaat",
+        "pl": "Pomidor",
+        "cs": "Rajče",
+        "hu": "Paradicsom",
+        "ro": "Roșie",
+        "bg": "Домат",
+        "el": "Ντομάτα",
+        "hr": "Rajčica",
+        "et": "Tomat",
+        "lv": "Tomāts",
+        "lt": "Pomidoras",
+        "ru": "Помидор",
+        "uk": "Помідор",
+        "zh": "番茄",
+        "ja": "トマト",
+        "ko": "토마토",
+        "vi": "Cà chua",
+        "th": "มะเขือเทศ",
+        "ar": "طماطم",
+        "tr": "Domates"
+      }
+    },
+    "tomatillo": {
+      "latin": "Physalis philadelphica",
+      "names": {
+        "sv": "Tomatillo",
+        "en": "Tomatillo",
+        "no": "Tomatillo",
+        "da": "Tomatillo",
+        "fi": "Tomatillo",
+        "is": "Tomatillo",
+        "de": "Tomatillo",
+        "fr": "Tomatillo",
+        "es": "Tomatillo",
+        "it": "Tomatillo",
+        "pt": "Tomatillo",
+        "nl": "Tomatillo",
+        "pl": "Tomatillo",
+        "cs": "Tomatillo",
+        "hu": "Tomatillo",
+        "ro": "Tomatillo",
+        "bg": "Томатило",
+        "el": "Τοματίγιο",
+        "hr": "Tomatillo",
+        "et": "Tomatillo",
+        "lv": "Tomatillo",
+        "lt": "Tomatilas",
+        "ru": "Томатильо",
+        "uk": "Томатильйо",
+        "zh": "灯笼果",
+        "ja": "トマティージョ",
+        "ko": "토마티요",
+        "vi": "Tomatillo",
+        "th": "โทมาทิลโล",
+        "ar": "طماطيو",
+        "tr": "Tomatillo"
+      }
+    },
+    "mexican_oregano": {
+      "latin": "Lippia graveolens",
+      "names": {
+        "sv": "Mexican Oregano",
+        "en": "Mexican Oregano",
+        "no": "Meksikansk oregano",
+        "da": "Mexicansk oregano",
+        "fi": "Meksikonoregano",
+        "is": "Mexíkóskt oregano",
+        "de": "Mexikanischer Oregano",
+        "fr": "Origan mexicain",
+        "es": "Orégano mexicano",
+        "it": "Origano messicano",
+        "pt": "Orégão mexicano",
+        "nl": "Mexicaanse oregano",
+        "pl": "Oregano meksykańskie",
+        "cs": "Mexický oregano",
+        "hu": "Mexikói oregánó",
+        "ro": "Oregano mexican",
+        "bg": "Мексиканско орегано",
+        "el": "Μεξικανική ρίγανη",
+        "hr": "Meksički origano",
+        "et": "Mehhiko pune",
+        "lv": "Meksikas raudene",
+        "lt": "Meksikinis raudonėlis",
+        "ru": "Мексиканский орегано",
+        "uk": "Мексиканська орегано",
+        "zh": "墨西哥牛至",
+        "ja": "メキシカンオレガノ",
+        "ko": "멕시칸 오레가노",
+        "vi": "Kinh giới Mexico",
+        "th": "ออริกาโนเม็กซิกัน",
+        "ar": "زعتر مكسيكي",
+        "tr": "Meksika kekiği"
+      }
+    },
+    "beans": {
+      "latin": "Phaseolus vulgaris",
+      "names": {
+        "sv": "Bönor",
+        "en": "Beans",
+        "no": "Bønner",
+        "da": "Bønner",
+        "fi": "Pavut",
+        "is": "Baunir",
+        "de": "Bohnen",
+        "fr": "Haricots",
+        "es": "Frijoles",
+        "it": "Fagioli",
+        "pt": "Feijão",
+        "nl": "Bonen",
+        "pl": "Fasola",
+        "cs": "Fazole",
+        "hu": "Bab",
+        "ro": "Fasole",
+        "bg": "Боб",
+        "el": "Φασόλια",
+        "hr": "Grah",
+        "et": "Oad",
+        "lv": "Pupiņas",
+        "lt": "Pupelės",
+        "ru": "Фасоль",
+        "uk": "Квасоля",
+        "zh": "菜豆",
+        "ja": "インゲン豆",
+        "ko": "강낭콩",
+        "vi": "Đậu",
+        "th": "ถั่ว",
+        "ar": "فاصوليا",
+        "tr": "Fasulye"
+      }
+    },
+    "sugar_snap": {
+      "latin": "Pisum sativum",
+      "names": {
+        "sv": "Sockerärtor",
+        "en": "Sugar Snap Peas",
+        "no": "Sukkererter",
+        "da": "Sukkerærter",
+        "fi": "Sokeriherne",
+        "is": "Sykurbaunir",
+        "de": "Zuckererbsen",
+        "fr": "Pois mange-tout",
+        "es": "Tirabeque",
+        "it": "Taccole",
+        "pt": "Ervilha-torta",
+        "nl": "Suikererwt",
+        "pl": "Groszek cukrowy",
+        "cs": "Cukrový hrách",
+        "hu": "Cukorborsó",
+        "ro": "Mazăre de zahăr",
+        "bg": "Захарен грах",
+        "el": "Αρακάς ζάχαρης",
+        "hr": "Šećerni grašak",
+        "et": "Suhkruhernes",
+        "lv": "Cukurzirņi",
+        "lt": "Cukriniai žirniai",
+        "ru": "Сахарный горошек",
+        "uk": "Цукровий горошок",
+        "zh": "甜脆豌豆",
+        "ja": "スナップエンドウ",
+        "ko": "슈가스냅 완두",
+        "vi": "Đậu Hà Lan ngọt",
+        "th": "ถั่วลันเตาหวาน",
+        "ar": "بازلاء سكرية",
+        "tr": "Şeker bezelyesi"
+      }
+    },
+    "basil": {
+      "latin": "Ocimum basilicum",
+      "names": {
+        "sv": "Basilika",
+        "en": "Basil",
+        "no": "Basilikum",
+        "da": "Basilikum",
+        "fi": "Basilika",
+        "is": "Basilíka",
+        "de": "Basilikum",
+        "fr": "Basilic",
+        "es": "Albahaca",
+        "it": "Basilico",
+        "pt": "Manjericão",
+        "nl": "Basilicum",
+        "pl": "Bazylia",
+        "cs": "Bazalka",
+        "hu": "Bazsalikom",
+        "ro": "Busuioc",
+        "bg": "Босилек",
+        "el": "Βασιλικός",
+        "hr": "Bosiljak",
+        "et": "Basiilik",
+        "lv": "Baziliks",
+        "lt": "Bazilikas",
+        "ru": "Базилик",
+        "uk": "Базилік",
+        "zh": "罗勒",
+        "ja": "バジル",
+        "ko": "바질",
+        "vi": "Húng quế",
+        "th": "โหระพา",
+        "ar": "ريحان",
+        "tr": "Fesleğen"
+      }
+    },
+    "parsley": {
+      "latin": "Petroselinum crispum",
+      "names": {
+        "sv": "Persilja",
+        "en": "Parsley",
+        "no": "Persille",
+        "da": "Persille",
+        "fi": "Persilja",
+        "is": "Steinselja",
+        "de": "Petersilie",
+        "fr": "Persil",
+        "es": "Perejil",
+        "it": "Prezzemolo",
+        "pt": "Salsa",
+        "nl": "Peterselie",
+        "pl": "Pietruszka",
+        "cs": "Petržel",
+        "hu": "Petrezselyem",
+        "ro": "Pătrunjel",
+        "bg": "Магданоз",
+        "el": "Μαϊντανός",
+        "hr": "Peršin",
+        "et": "Petersell",
+        "lv": "Pētersīļi",
+        "lt": "Petražolė",
+        "ru": "Петрушка",
+        "uk": "Петрушка",
+        "zh": "欧芹",
+        "ja": "パセリ",
+        "ko": "파슬리",
+        "vi": "Mùi tây",
+        "th": "ผักชีฝรั่ง",
+        "ar": "بقدونس",
+        "tr": "Maydanoz"
+      }
+    },
+    "mangold": {
+      "latin": "Beta vulgaris subsp. vulgaris",
+      "names": {
+        "sv": "Mangold",
+        "en": "Swiss Chard",
+        "no": "Mangold",
+        "da": "Mangold",
+        "fi": "Lehtimangoldi",
+        "is": "Blaðbeðja",
+        "de": "Mangold",
+        "fr": "Bette à carde",
+        "es": "Acelga",
+        "it": "Bietola",
+        "pt": "Acelga",
+        "nl": "Snijbiet",
+        "pl": "Boćwina",
+        "cs": "Mangold",
+        "hu": "Mángold",
+        "ro": "Mangold",
+        "bg": "Манголд",
+        "el": "Σέσκουλο",
+        "hr": "Blitva",
+        "et": "Lehtpeet",
+        "lv": "Mangolds",
+        "lt": "Mangoldas",
+        "ru": "Мангольд",
+        "uk": "Мангольд",
+        "zh": "牛皮菜",
+        "ja": "スイスチャード",
+        "ko": "근대",
+        "vi": "Cải cầu vồng",
+        "th": "ผักโขมสวิส",
+        "ar": "سلق",
+        "tr": "Pazı"
+      }
+    },
+    "rosemary": {
+      "latin": "Salvia rosmarinus",
+      "names": {
+        "sv": "Rosmarin",
+        "en": "Rosemary",
+        "no": "Rosmarin",
+        "da": "Rosmarin",
+        "fi": "Rosmariini",
+        "is": "Rósmarín",
+        "de": "Rosmarin",
+        "fr": "Romarin",
+        "es": "Romero",
+        "it": "Rosmarino",
+        "pt": "Alecrim",
+        "nl": "Rozemarijn",
+        "pl": "Rozmaryn",
+        "cs": "Rozmarýn",
+        "hu": "Rozmaring",
+        "ro": "Rozmarin",
+        "bg": "Розмарин",
+        "el": "Δεντρολίβανο",
+        "hr": "Ružmarin",
+        "et": "Rosmariin",
+        "lv": "Rozmarīns",
+        "lt": "Rozmarinas",
+        "ru": "Розмарин",
+        "uk": "Розмарин",
+        "zh": "迷迭香",
+        "ja": "ローズマリー",
+        "ko": "로즈마리",
+        "vi": "Hương thảo",
+        "th": "โรสแมรี่",
+        "ar": "إكليل الجبل",
+        "tr": "Biberiye"
+      }
+    },
+    "oregano": {
+      "latin": "Origanum vulgare",
+      "names": {
+        "sv": "Oregano",
+        "en": "Oregano",
+        "no": "Oregano",
+        "da": "Oregano",
+        "fi": "Oregano",
+        "is": "Oregano",
+        "de": "Oregano",
+        "fr": "Origan",
+        "es": "Orégano",
+        "it": "Origano",
+        "pt": "Orégão",
+        "nl": "Oregano",
+        "pl": "Oregano",
+        "cs": "Oregano",
+        "hu": "Oregánó",
+        "ro": "Oregano",
+        "bg": "Риган",
+        "el": "Ρίγανη",
+        "hr": "Origano",
+        "et": "Pune",
+        "lv": "Raudene",
+        "lt": "Raudonėlis",
+        "ru": "Орегано (душица)",
+        "uk": "Орегано (материнка)",
+        "zh": "牛至",
+        "ja": "オレガノ",
+        "ko": "오레가노",
+        "vi": "Kinh giới (Oregano)",
+        "th": "ออริกาโน",
+        "ar": "أوريغانو",
+        "tr": "Kekik"
+      }
+    },
+    "rhubarb": {
+      "latin": "Rheum rhabarbarum",
+      "names": {
+        "sv": "Rabarber",
+        "en": "Rhubarb",
+        "no": "Rabarbra",
+        "da": "Rabarber",
+        "fi": "Raparperi",
+        "is": "Rabarbari",
+        "de": "Rhabarber",
+        "fr": "Rhubarbe",
+        "es": "Ruibarbo",
+        "it": "Rabarbaro",
+        "pt": "Ruibarbo",
+        "nl": "Rabarber",
+        "pl": "Rabarbar",
+        "cs": "Reveň",
+        "hu": "Rebarbara",
+        "ro": "Rubarbă",
+        "bg": "Ревен",
+        "el": "Ραβέντι",
+        "hr": "Rabarbara",
+        "et": "Rabarber",
+        "lv": "Rabarberi",
+        "lt": "Rabarbaras",
+        "ru": "Ревень",
+        "uk": "Ревінь",
+        "zh": "大黄",
+        "ja": "ルバーブ",
+        "ko": "루바브",
+        "vi": "Đại hoàng",
+        "th": "รูบาร์บ",
+        "ar": "راوند",
+        "tr": "Ravent"
+      }
+    },
+    "red_currant": {
+      "latin": "Ribes rubrum",
+      "names": {
+        "sv": "Röda Vinbär",
+        "en": "Red Currant",
+        "no": "Rips",
+        "da": "Ribs",
+        "fi": "Punaherukka",
+        "is": "Rifsber",
+        "de": "Rote Johannisbeere",
+        "fr": "Groseille rouge",
+        "es": "Grosella roja",
+        "it": "Ribes rosso",
+        "pt": "Groselha vermelha",
+        "nl": "Rode bes",
+        "pl": "Czerwona porzeczka",
+        "cs": "Rybíz červený",
+        "hu": "Piros ribizli",
+        "ro": "Coacăze roșii",
+        "bg": "Червено френско грозде",
+        "el": "Κόκκινη φραγκοστάφυλο",
+        "hr": "Crveni ribiz",
+        "et": "Punane sõstar",
+        "lv": "Sarkanās jāņogas",
+        "lt": "Raudonieji serbentai",
+        "ru": "Красная смородина",
+        "uk": "Червона смородина",
+        "zh": "红醋栗",
+        "ja": "赤スグリ",
+        "ko": "레드커런트",
+        "vi": "Lý chua đỏ",
+        "th": "เรดเคอแรนท์",
+        "ar": "كشمش أحمر",
+        "tr": "Kırmızı frenk üzümü"
+      }
+    },
+    "gooseberry": {
+      "latin": "Ribes uva-crispa",
+      "names": {
+        "sv": "Krusbär",
+        "en": "Gooseberry",
+        "no": "Stikkelsbær",
+        "da": "Stikkelsbær",
+        "fi": "Karviainen",
+        "is": "Stikilsber",
+        "de": "Stachelbeere",
+        "fr": "Groseille à maquereau",
+        "es": "Grosella espinosa",
+        "it": "Uva spina",
+        "pt": "Groselha espinhosa",
+        "nl": "Kruisbes",
+        "pl": "Agrest",
+        "cs": "Angrešt",
+        "hu": "Egres",
+        "ro": "Agrișe",
+        "bg": "Цариградско грозде",
+        "el": "Φραγκοστάφυλο",
+        "hr": "Ogrozd",
+        "et": "Karusmari",
+        "lv": "Ērkšķogas",
+        "lt": "Agrastai",
+        "ru": "Крыжовник",
+        "uk": "Аґрус",
+        "zh": "醋栗",
+        "ja": "グーズベリー",
+        "ko": "구스베리",
+        "vi": "Lý gai",
+        "th": "กูสเบอร์รี",
+        "ar": "عنب الثعلب",
+        "tr": "Bektaşi üzümü"
+      }
+    },
+    "blackcurrant": {
+      "latin": "Ribes nigrum",
+      "names": {
+        "sv": "Svarta Vinbär",
+        "en": "Blackcurrant",
+        "no": "Solbær",
+        "da": "Solbær",
+        "fi": "Mustaherukka",
+        "is": "Sólber",
+        "de": "Schwarze Johannisbeere",
+        "fr": "Cassis",
+        "es": "Grosella negra",
+        "it": "Ribes nero",
+        "pt": "Groselha preta (Cassis)",
+        "nl": "Zwarte bes",
+        "pl": "Czarna porzeczka",
+        "cs": "Rybíz černý",
+        "hu": "Fekete ribizli",
+        "ro": "Coacăze negre",
+        "bg": "Черно френско грозде",
+        "el": "Μαύρο φραγκοστάφυλο",
+        "hr": "Crni ribiz",
+        "et": "Must sõstar",
+        "lv": "Upenes",
+        "lt": "Juodieji serbentai",
+        "ru": "Чёрная смородина",
+        "uk": "Чорна смородина",
+        "zh": "黑加仑",
+        "ja": "カシス（黒スグリ）",
+        "ko": "블랙커런트",
+        "vi": "Lý chua đen",
+        "th": "แบล็กเคอแรนท์",
+        "ar": "كشمش أسود",
+        "tr": "Siyah frenk üzümü"
+      }
+    },
+    "blackberry": {
+      "latin": "Rubus fruticosus agg.",
+      "names": {
+        "sv": "Björnbär",
+        "en": "Blackberry",
+        "no": "Bjørnebær",
+        "da": "Brombær",
+        "fi": "Karhunvatukka",
+        "is": "Brómber",
+        "de": "Brombeere",
+        "fr": "Mûre",
+        "es": "Mora",
+        "it": "Mora",
+        "pt": "Amora",
+        "nl": "Braam",
+        "pl": "Jeżyna",
+        "cs": "Ostružina",
+        "hu": "Szeder",
+        "ro": "Mure",
+        "bg": "Къпина",
+        "el": "Βατόμουρο",
+        "hr": "Kupina",
+        "et": "Aedmurakas",
+        "lv": "Kazenes",
+        "lt": "Gervuogė",
+        "ru": "Ежевика",
+        "uk": "Ожина",
+        "zh": "黑莓",
+        "ja": "ブラックベリー",
+        "ko": "블랙베리",
+        "vi": "Mâm xôi đen",
+        "th": "แบล็กเบอร์รี",
+        "ar": "توت العليق",
+        "tr": "Böğürtlen"
+      }
+    },
+    "strawberry": {
+      "latin": "Fragaria × ananassa",
+      "names": {
+        "sv": "Jordgubbar",
+        "en": "Strawberry",
+        "no": "Jordbær",
+        "da": "Jordbær",
+        "fi": "Mansikka",
+        "is": "Jarðarber",
+        "de": "Erdbeere",
+        "fr": "Fraise",
+        "es": "Fresa",
+        "it": "Fragola",
+        "pt": "Morango",
+        "nl": "Aardbei",
+        "pl": "Truskawka",
+        "cs": "Jahoda",
+        "hu": "Eper",
+        "ro": "Căpșuni",
+        "bg": "Ягода",
+        "el": "Φράουλα",
+        "hr": "Jagoda",
+        "et": "Maasikas",
+        "lv": "Zemenes",
+        "lt": "Braškė",
+        "ru": "Клубника",
+        "uk": "Полуниця",
+        "zh": "草莓",
+        "ja": "イチゴ",
+        "ko": "딸기",
+        "vi": "Dâu tây",
+        "th": "สตรอว์เบอร์รี",
+        "ar": "فراولة",
+        "tr": "Çilek"
+      }
+    },
+    "jerusalem_artichoke": {
+      "latin": "Helianthus tuberosus",
+      "names": {
+        "sv": "Jordärtskockor",
+        "en": "Jerusalem Artichoke",
+        "no": "Jordskokk",
+        "da": "Jordskok",
+        "fi": "Maa-artisokka",
+        "is": "Ætiþistill frá Jerúsalem",
+        "de": "Topinambur",
+        "fr": "Topinambour",
+        "es": "Tupinambo",
+        "it": "Topinambur",
+        "pt": "Tupinambo",
+        "nl": "Aardpeer",
+        "pl": "Topinambur",
+        "cs": "Topinambur",
+        "hu": "Csicsóka",
+        "ro": "Topinambur",
+        "bg": "Топинамбур",
+        "el": "Ηλίανθος ο κονδυλώδης",
+        "hr": "Čičoka",
+        "et": "Maapirn",
+        "lv": "Topinambūrs",
+        "lt": "Topinambas",
+        "ru": "Топинамбур",
+        "uk": "Топінамбур",
+        "zh": "菊芋",
+        "ja": "キクイモ",
+        "ko": "돼지감자",
+        "vi": "Atiso Jerusalem",
+        "th": "แก่นตะวัน",
+        "ar": "خرشوف القدس",
+        "tr": "Yer elması"
+      }
+    },
+    "tarragon": {
+      "latin": "Artemisia dracunculus",
+      "names": {
+        "sv": "Dragon",
+        "en": "Tarragon",
+        "no": "Estragon",
+        "da": "Estragon",
+        "fi": "Rakuuna",
+        "is": "Esdragon",
+        "de": "Estragon",
+        "fr": "Estragon",
+        "es": "Estragón",
+        "it": "Dragoncello",
+        "pt": "Estragão",
+        "nl": "Dragon",
+        "pl": "Estragon",
+        "cs": "Estragon",
+        "hu": "Tárkony",
+        "ro": "Tarhon",
+        "bg": "Естрагон",
+        "el": "Εστραγκόν",
+        "hr": "Estragon",
+        "et": "Estragon",
+        "lv": "Estragons",
+        "lt": "Estragonas",
+        "ru": "Тархун",
+        "uk": "Естрагон",
+        "zh": "龙蒿",
+        "ja": "タラゴン",
+        "ko": "타라곤",
+        "vi": "Ngải giấm",
+        "th": "ทาร์รากอน",
+        "ar": "طرخون",
+        "tr": "Tarhun"
+      }
+    },
+    "chives": {
+      "latin": "Allium schoenoprasum",
+      "names": {
+        "sv": "Gräslök",
+        "en": "Chives",
+        "no": "Gressløk",
+        "da": "Purløg",
+        "fi": "Ruohosipuli",
+        "is": "Graslaukur",
+        "de": "Schnittlauch",
+        "fr": "Ciboulette",
+        "es": "Cebollino",
+        "it": "Erba cipollina",
+        "pt": "Cebolinho",
+        "nl": "Bieslook",
+        "pl": "Szczypiorek",
+        "cs": "Pažitka",
+        "hu": "Metélőhagyma",
+        "ro": "Arpagic",
+        "bg": "Лук резанец",
+        "el": "Σχοινόπρασο",
+        "hr": "Vlasac",
+        "et": "Murulauk",
+        "lv": "Maurloks",
+        "lt": "Laiškiniai česnakai",
+        "ru": "Шнитт-лук",
+        "uk": "Різанець",
+        "zh": "细香葱",
+        "ja": "チャイブ",
+        "ko": "차이브",
+        "vi": "Hẹ tây",
+        "th": "ชีฟส์",
+        "ar": "ثوم معمر",
+        "tr": "Kaya soğanı"
+      }
+    },
+    "chili": {
+      "latin": "Capsicum annuum",
+      "names": {
+        "sv": "Chili",
+        "en": "Chili",
+        "no": "Chili",
+        "da": "Chili",
+        "fi": "Chili",
+        "is": "Chili",
+        "de": "Chili",
+        "fr": "Piment",
+        "es": "Chile",
+        "it": "Peperoncino",
+        "pt": "Malagueta",
+        "nl": "Chili",
+        "pl": "Chili",
+        "cs": "Chilli paprička",
+        "hu": "Chili",
+        "ro": "Chili",
+        "bg": "Чили",
+        "el": "Τσίλι",
+        "hr": "Čili",
+        "et": "Tšilli",
+        "lv": "Čili",
+        "lt": "Čili",
+        "ru": "Чили",
+        "uk": "Чилі",
+        "zh": "辣椒",
+        "ja": "チリペッパー",
+        "ko": "칠리 고추",
+        "vi": "Ớt",
+        "th": "พริก",
+        "ar": "فلفل حار",
+        "tr": "Acı biber"
+      }
+    },
+    "cucumber": {
+      "latin": "Cucumis sativus",
+      "names": {
+        "sv": "Gurka",
+        "en": "Cucumber",
+        "no": "Agurk",
+        "da": "Agurk",
+        "fi": "Kurkku",
+        "is": "Gúrka",
+        "de": "Gurke",
+        "fr": "Concombre",
+        "es": "Pepino",
+        "it": "Cetriolo",
+        "pt": "Pepino",
+        "nl": "Komkommer",
+        "pl": "Ogórek",
+        "cs": "Okurka",
+        "hu": "Uborka",
+        "ro": "Castravete",
+        "bg": "Краставица",
+        "el": "Αγγούρι",
+        "hr": "Krastavac",
+        "et": "Kurk",
+        "lv": "Gurķis",
+        "lt": "Agurkas",
+        "ru": "Огурец",
+        "uk": "Огірок",
+        "zh": "黄瓜",
+        "ja": "キュウリ",
+        "ko": "오이",
+        "vi": "Dưa chuột",
+        "th": "แตงกวา",
+        "ar": "خيار",
+        "tr": "Salatalık"
+      }
+    },
+    "zucchini": {
+      "latin": "Cucurbita pepo",
+      "names": {
+        "sv": "Zucchini",
+        "en": "Zucchini",
+        "no": "Squash",
+        "da": "Squash",
+        "fi": "Kesäkurpitsa",
+        "is": "Kúrbítur",
+        "de": "Zucchini",
+        "fr": "Courgette",
+        "es": "Calabacín",
+        "it": "Zucchina",
+        "pt": "Abobrinha",
+        "nl": "Courgette",
+        "pl": "Cukinia",
+        "cs": "Cuketa",
+        "hu": "Cukkini",
+        "ro": "Dovlecel",
+        "bg": "Тиквичка",
+        "el": "Κολοκυθάκι",
+        "hr": "Tikvica",
+        "et": "Suvikõrvits",
+        "lv": "Kabacis",
+        "lt": "Cukinija",
+        "ru": "Кабачок",
+        "uk": "Кабачок",
+        "zh": "西葫芦",
+        "ja": "ズッキーニ",
+        "ko": "애호박",
+        "vi": "Bí ngòi",
+        "th": "ซูกินี",
+        "ar": "كوسة",
+        "tr": "Kabak"
+      }
+    }
+  },
+
+  // ---- CATEGORIES (the 4 planter shapes: R/F/T/K) -----------------------
+  // "hex" is the pin/pill color. "label" is the translated category name.
+  "categories": {
+    "R": {
+      "hex": "#4f7a48",
+      "label": {
+        "sv": "Rektangulära Odlingskärl",
+        "en": "Rectangular Planters",
+        "no": "Rektangulære dyrkingskar",
+        "da": "Rektangulære plantekar",
+        "fi": "Suorakaiteen kasvatuslaatikot",
+        "is": "Rétthyrndir ræktunarkassar",
+        "de": "Rechteckige Pflanzkästen",
+        "fr": "Bacs rectangulaires",
+        "es": "Jardineras rectangulares",
+        "it": "Fioriere rettangolari",
+        "pt": "Floreiras retangulares",
+        "nl": "Rechthoekige plantenbakken",
+        "pl": "Prostokątne skrzynki",
+        "cs": "Obdélníkové truhlíky",
+        "hu": "Téglalap alakú növénytartók",
+        "ro": "Ghivece dreptunghiulare",
+        "bg": "Правоъгълни лехи",
+        "el": "Ορθογώνιες γλάστρες",
+        "hr": "Pravokutne sadilice",
+        "et": "Ristkülikukujulised kastid",
+        "lv": "Taisnstūra dobes",
+        "lt": "Stačiakampės lysvės",
+        "ru": "Прямоугольные грядки",
+        "uk": "Прямокутні грядки",
+        "zh": "长方形种植箱",
+        "ja": "長方形の栽培コンテナ",
+        "ko": "직사각형 화단",
+        "vi": "Chậu trồng hình chữ nhật",
+        "th": "กระบะปลูกทรงสี่เหลี่ยมผืนผ้า",
+        "ar": "أحواض زراعة مستطيلة",
+        "tr": "Dikdörtgen ekim kapları"
+      }
+    },
+    "F": {
+      "hex": "#c9a227",
+      "label": {
+        "sv": "Fyrkantiga Odlingskärl",
+        "en": "Square Planters",
+        "no": "Firkantede dyrkingskar",
+        "da": "Firkantede plantekar",
+        "fi": "Neliönmuotoiset kasvatuslaatikot",
+        "is": "Ferkantaðir ræktunarkassar",
+        "de": "Quadratische Pflanzkästen",
+        "fr": "Bacs carrés",
+        "es": "Jardineras cuadradas",
+        "it": "Fioriere quadrate",
+        "pt": "Floreiras quadradas",
+        "nl": "Vierkante plantenbakken",
+        "pl": "Kwadratowe skrzynki",
+        "cs": "Čtvercové truhlíky",
+        "hu": "Négyzet alakú növénytartók",
+        "ro": "Ghivece pătrate",
+        "bg": "Квадратни лехи",
+        "el": "Τετράγωνες γλάστρες",
+        "hr": "Kvadratne sadilice",
+        "et": "Ruudukujulised kastid",
+        "lv": "Kvadrātveida dobes",
+        "lt": "Kvadratinės lysvės",
+        "ru": "Квадратные грядки",
+        "uk": "Квадратні грядки",
+        "zh": "正方形种植箱",
+        "ja": "正方形の栽培コンテナ",
+        "ko": "정사각형 화단",
+        "vi": "Chậu trồng hình vuông",
+        "th": "กระบะปลูกทรงสี่เหลี่ยมจัตุรัส",
+        "ar": "أحواض زراعة مربعة",
+        "tr": "Kare ekim kapları"
+      }
+    },
+    "T": {
+      "hex": "#8a8f87",
+      "label": {
+        "sv": "Triangulära Odlingskärl",
+        "en": "Triangular Planters",
+        "no": "Trekantede dyrkingskar",
+        "da": "Trekantede plantekar",
+        "fi": "Kolmion muotoiset kasvatuslaatikot",
+        "is": "Þríhyrndir ræktunarkassar",
+        "de": "Dreieckige Pflanzkästen",
+        "fr": "Bacs triangulaires",
+        "es": "Jardineras triangulares",
+        "it": "Fioriere triangolari",
+        "pt": "Floreiras triangulares",
+        "nl": "Driehoekige plantenbakken",
+        "pl": "Trójkątne skrzynki",
+        "cs": "Trojúhelníkové truhlíky",
+        "hu": "Háromszög alakú növénytartók",
+        "ro": "Ghivece triunghiulare",
+        "bg": "Триъгълни лехи",
+        "el": "Τριγωνικές γλάστρες",
+        "hr": "Trokutaste sadilice",
+        "et": "Kolmnurksed kastid",
+        "lv": "Trīsstūra dobes",
+        "lt": "Trikampės lysvės",
+        "ru": "Треугольные грядки",
+        "uk": "Трикутні грядки",
+        "zh": "三角形种植箱",
+        "ja": "三角形の栽培コンテナ",
+        "ko": "삼각형 화단",
+        "vi": "Chậu trồng hình tam giác",
+        "th": "กระบะปลูกทรงสามเหลี่ยม",
+        "ar": "أحواض زراعة مثلثة",
+        "tr": "Üçgen ekim kapları"
+      }
+    },
+    "K": {
+      "hex": "#7c5c3e",
+      "label": {
+        "sv": "Runda Krukor",
+        "en": "Round Pots",
+        "no": "Runde potter",
+        "da": "Runde krukker",
+        "fi": "Pyöreät ruukut",
+        "is": "Kringlóttir pottar",
+        "de": "Runde Töpfe",
+        "fr": "Pots ronds",
+        "es": "Macetas redondas",
+        "it": "Vasi rotondi",
+        "pt": "Vasos redondos",
+        "nl": "Ronde potten",
+        "pl": "Okrągłe donice",
+        "cs": "Kulaté květináče",
+        "hu": "Kerek cserepek",
+        "ro": "Ghivece rotunde",
+        "bg": "Кръгли саксии",
+        "el": "Στρογγυλές γλάστρες",
+        "hr": "Okrugle tegle",
+        "et": "Ümarad potid",
+        "lv": "Apaļi podi",
+        "lt": "Apvalūs vazonai",
+        "ru": "Круглые горшки",
+        "uk": "Круглі горщики",
+        "zh": "圆形花盆",
+        "ja": "丸い鉢",
+        "ko": "둥근 화분",
+        "vi": "Chậu tròn",
+        "th": "กระถางทรงกลม",
+        "ar": "أواني دائرية",
+        "tr": "Yuvarlak saksılar"
+      }
+    }
+  },
+
+  // ---- UI TEXT / CHROME --------------------------------------------------
+  // Every button, header, and small label the app shows, per language.
+  // Edit the "sv" (Swedish) or "en" (English) value directly to change
+  // wording; other languages are machine-translated equivalents.
+  "ui": {
+    "searchPlaceholder": {
+      "sv": "Sök efter växt",
+      "en": "Search planters…",
+      "no": "Søk i plantekar…",
+      "da": "Søg plantekar…",
+      "fi": "Etsi kasvatuslaatikoita…",
+      "is": "Leita í ræktunarkössum…",
+      "de": "Pflanzkästen durchsuchen…",
+      "fr": "Rechercher des bacs…",
+      "es": "Buscar jardineras…",
+      "it": "Cerca fioriere…",
+      "pt": "Pesquisar floreiras…",
+      "nl": "Plantenbakken zoeken…",
+      "pl": "Szukaj skrzynek…",
+      "cs": "Hledat truhlíky…",
+      "hu": "Növénytartók keresése…",
+      "ro": "Caută ghivece…",
+      "bg": "Търсене на лехи…",
+      "el": "Αναζήτηση γλαστρών…",
+      "hr": "Pretraži sadilice…",
+      "et": "Otsi kasvukaste…",
+      "lv": "Meklēt dobes…",
+      "lt": "Ieškoti lysvių…",
+      "ru": "Поиск грядок…",
+      "uk": "Пошук грядок…",
+      "zh": "搜索种植箱…",
+      "ja": "栽培容器を検索…",
+      "ko": "화단 검색…",
+      "vi": "Tìm chậu trồng…",
+      "th": "ค้นหากระบะปลูก…",
+      "ar": "البحث عن الأحواض…",
+      "tr": "Ekim kaplarını ara…"
+    },
+    "marker": {
+      "sv": "Markör",
+      "en": "Marker",
+      "no": "Markør",
+      "da": "Markør",
+      "fi": "Merkki",
+      "is": "Merki",
+      "de": "Markierung",
+      "fr": "Repère",
+      "es": "Marcador",
+      "it": "Indicatore",
+      "pt": "Marcador",
+      "nl": "Markering",
+      "pl": "Znacznik",
+      "cs": "Značka",
+      "hu": "Jelölő",
+      "ro": "Marcaj",
+      "bg": "Маркер",
+      "el": "Δείκτης",
+      "hr": "Oznaka",
+      "et": "Marker",
+      "lv": "Marķieris",
+      "lt": "Žymeklis",
+      "ru": "Метка",
+      "uk": "Мітка",
+      "zh": "标记",
+      "ja": "マーカー",
+      "ko": "마커",
+      "vi": "Ký hiệu",
+      "th": "เครื่องหมาย",
+      "ar": "علامة",
+      "tr": "İşaretçi"
+    },
+    "latinLabel": {
+      "sv": "Latinskt namn",
+      "en": "Latin name",
+      "no": "Latinsk navn",
+      "da": "Latinsk navn",
+      "fi": "Latinankielinen nimi",
+      "is": "Latneskt heiti",
+      "de": "Lateinischer Name",
+      "fr": "Nom latin",
+      "es": "Nombre latino",
+      "it": "Nome latino",
+      "pt": "Nome latino",
+      "nl": "Latijnse naam",
+      "pl": "Nazwa łacińska",
+      "cs": "Latinský název",
+      "hu": "Latin név",
+      "ro": "Nume latin",
+      "bg": "Латинско име",
+      "el": "Λατινικό όνομα",
+      "hr": "Latinski naziv",
+      "et": "Ladinakeelne nimi",
+      "lv": "Latīniskais nosaukums",
+      "lt": "Lotyniškas pavadinimas",
+      "ru": "Латинское название",
+      "uk": "Латинська назва",
+      "zh": "拉丁名",
+      "ja": "ラテン語名",
+      "ko": "학명(라틴어)",
+      "vi": "Tên Latinh",
+      "th": "ชื่อละติน",
+      "ar": "الاسم اللاتيني",
+      "tr": "Latince adı"
+    },
+    "empty": {
+      "sv": "Tom",
+      "en": "Empty",
+      "no": "Tom",
+      "da": "Tom",
+      "fi": "Tyhjä",
+      "is": "Tómt",
+      "de": "Leer",
+      "fr": "Vide",
+      "es": "Vacío",
+      "it": "Vuoto",
+      "pt": "Vazio",
+      "nl": "Leeg",
+      "pl": "Puste",
+      "cs": "Prázdné",
+      "hu": "Üres",
+      "ro": "Gol",
+      "bg": "Празно",
+      "el": "Κενό",
+      "hr": "Prazno",
+      "et": "Tühi",
+      "lv": "Tukšs",
+      "lt": "Tuščia",
+      "ru": "Пусто",
+      "uk": "Порожньо",
+      "zh": "空",
+      "ja": "空き",
+      "ko": "비어있음",
+      "vi": "Trống",
+      "th": "ว่าง",
+      "ar": "فارغ",
+      "tr": "Boş"
+    },
+    "listTitle": {
+      "sv": "Lista",
+      "en": "List",
+      "no": "Liste",
+      "da": "Liste",
+      "fi": "Luettelo",
+      "is": "Listi",
+      "de": "Liste",
+      "fr": "Liste",
+      "es": "Lista",
+      "it": "Elenco",
+      "pt": "Lista",
+      "nl": "Lijst",
+      "pl": "Lista",
+      "cs": "Seznam",
+      "hu": "Lista",
+      "ro": "Listă",
+      "bg": "Списък",
+      "el": "Λίστα",
+      "hr": "Popis",
+      "et": "Loend",
+      "lv": "Saraksts",
+      "lt": "Sąrašas",
+      "ru": "Список",
+      "uk": "Список",
+      "zh": "列表",
+      "ja": "リスト",
+      "ko": "목록",
+      "vi": "Danh sách",
+      "th": "รายการ",
+      "ar": "قائمة",
+      "tr": "Liste"
+    },
+    "ourPlants": {
+      "sv": "Våra Växter",
+      "en": "Our Plants",
+      "no": "Våre Planter",
+      "da": "Vores Planter",
+      "fi": "Kasvimme",
+      "is": "Plönturnar okkar",
+      "de": "Unsere Pflanzen",
+      "fr": "Nos Plantes",
+      "es": "Nuestras Plantas",
+      "it": "Le Nostre Piante",
+      "pt": "Nossas Plantas",
+      "nl": "Onze Planten",
+      "pl": "Nasze Rośliny",
+      "cs": "Naše Rostliny",
+      "hu": "Növényeink",
+      "ro": "Plantele Noastre",
+      "bg": "Нашите Растения",
+      "el": "Τα Φυτά μας",
+      "hr": "Naše Biljke",
+      "et": "Meie Taimed",
+      "lv": "Mūsu Augi",
+      "lt": "Mūsų Augalai",
+      "ru": "Наши Растения",
+      "uk": "Наші Рослини",
+      "zh": "我们的植物",
+      "ja": "私たちの植物",
+      "ko": "우리의 식물",
+      "vi": "Cây Trồng Của Chúng Tôi",
+      "th": "พืชของเรา",
+      "ar": "نباتاتنا",
+      "tr": "Bitkilerimiz"
+    },
+    "back": {
+      "sv": "Tillbaka",
+      "en": "Back",
+      "no": "Tilbake",
+      "da": "Tilbage",
+      "fi": "Takaisin",
+      "is": "Til baka",
+      "de": "Zurück",
+      "fr": "Retour",
+      "es": "Atrás",
+      "it": "Indietro",
+      "pt": "Voltar",
+      "nl": "Terug",
+      "pl": "Wstecz",
+      "cs": "Zpět",
+      "hu": "Vissza",
+      "ro": "Înapoi",
+      "bg": "Назад",
+      "el": "Πίσω",
+      "hr": "Natrag",
+      "et": "Tagasi",
+      "lv": "Atpakaļ",
+      "lt": "Atgal",
+      "ru": "Назад",
+      "uk": "Назад",
+      "zh": "返回",
+      "ja": "戻る",
+      "ko": "뒤로",
+      "vi": "Quay lại",
+      "th": "กลับ",
+      "ar": "رجوع",
+      "tr": "Geri"
+    },
+    "container": {
+      "sv": "Behållare",
+      "en": "Container",
+      "no": "Beholder",
+      "da": "Beholder",
+      "fi": "Kasvatuslaatikko",
+      "is": "Ílát",
+      "de": "Behälter",
+      "fr": "Bac",
+      "es": "Jardinera",
+      "it": "Contenitore",
+      "pt": "Recipiente",
+      "nl": "Bak",
+      "pl": "Pojemnik",
+      "cs": "Nádoba",
+      "hu": "Tartály",
+      "ro": "Recipient",
+      "bg": "Съд",
+      "el": "Δοχείο",
+      "hr": "Spremnik",
+      "et": "Anum",
+      "lv": "Trauks",
+      "lt": "Talpykla",
+      "ru": "Контейнер",
+      "uk": "Контейнер",
+      "zh": "容器",
+      "ja": "コンテナ",
+      "ko": "용기",
+      "vi": "Thùng chứa",
+      "th": "ภาชนะ",
+      "ar": "وعاء",
+      "tr": "Kap"
+    },
+    "type": {
+      "sv": "Typ",
+      "en": "Type",
+      "no": "Type",
+      "da": "Type",
+      "fi": "Tyyppi",
+      "is": "Tegund",
+      "de": "Typ",
+      "fr": "Type",
+      "es": "Tipo",
+      "it": "Tipo",
+      "pt": "Tipo",
+      "nl": "Type",
+      "pl": "Typ",
+      "cs": "Typ",
+      "hu": "Típus",
+      "ro": "Tip",
+      "bg": "Тип",
+      "el": "Τύπος",
+      "hr": "Vrsta",
+      "et": "Tüüp",
+      "lv": "Veids",
+      "lt": "Tipas",
+      "ru": "Тип",
+      "uk": "Тип",
+      "zh": "类型",
+      "ja": "タイプ",
+      "ko": "유형",
+      "vi": "Loại",
+      "th": "ประเภท",
+      "ar": "النوع",
+      "tr": "Tür"
+    },
+    "plants": {
+      "sv": "Växter",
+      "en": "Plants",
+      "no": "Planter",
+      "da": "Planter",
+      "fi": "Kasvit",
+      "is": "Plöntur",
+      "de": "Pflanzen",
+      "fr": "Plantes",
+      "es": "Plantas",
+      "it": "Piante",
+      "pt": "Plantas",
+      "nl": "Planten",
+      "pl": "Rośliny",
+      "cs": "Rostliny",
+      "hu": "Növények",
+      "ro": "Plante",
+      "bg": "Растения",
+      "el": "Φυτά",
+      "hr": "Biljke",
+      "et": "Taimed",
+      "lv": "Augi",
+      "lt": "Augalai",
+      "ru": "Растения",
+      "uk": "Рослини",
+      "zh": "植物",
+      "ja": "植物",
+      "ko": "식물",
+      "vi": "Cây",
+      "th": "พืช",
+      "ar": "نباتات",
+      "tr": "Bitkiler"
+    },
+    "description": {
+      "sv": "Beskrivning",
+      "en": "Description",
+      "no": "Beskrivelse",
+      "da": "Beskrivelse",
+      "fi": "Kuvaus",
+      "is": "Lýsing",
+      "de": "Beschreibung",
+      "fr": "Description",
+      "es": "Descripción",
+      "it": "Descrizione",
+      "pt": "Descrição",
+      "nl": "Beschrijving",
+      "pl": "Opis",
+      "cs": "Popis",
+      "hu": "Leírás",
+      "ro": "Descriere",
+      "bg": "Описание",
+      "el": "Περιγραφή",
+      "hr": "Opis",
+      "et": "Kirjeldus",
+      "lv": "Apraksts",
+      "lt": "Aprašymas",
+      "ru": "Описание",
+      "uk": "Опис",
+      "zh": "描述",
+      "ja": "説明",
+      "ko": "설명",
+      "vi": "Mô tả",
+      "th": "คำอธิบาย",
+      "ar": "الوصف",
+      "tr": "Açıklama"
+    },
+    "dishes": {
+      "sv": "Rätter",
+      "en": "Dishes",
+      "no": "Retter",
+      "da": "Retter",
+      "fi": "Ruokalajit",
+      "is": "Réttir",
+      "de": "Gerichte",
+      "fr": "Plats",
+      "es": "Platos",
+      "it": "Piatti",
+      "pt": "Pratos",
+      "nl": "Gerechten",
+      "pl": "Dania",
+      "cs": "Jídla",
+      "hu": "Ételek",
+      "ro": "Feluri de mâncare",
+      "bg": "Ястия",
+      "el": "Πιάτα",
+      "hr": "Jela",
+      "et": "Road",
+      "lv": "Ēdieni",
+      "lt": "Patiekalai",
+      "ru": "Блюда",
+      "uk": "Страви",
+      "zh": "菜肴",
+      "ja": "料理",
+      "ko": "요리",
+      "vi": "Món ăn",
+      "th": "อาหาร",
+      "ar": "أطباق",
+      "tr": "Yemekler"
+    },
+    "noDescriptionYet": {
+      "sv": "[Beskrivning kommer snart]",
+      "en": "[Description coming soon]",
+      "no": "[Beskrivelse kommer snart]",
+      "da": "[Beskrivelse kommer snart]",
+      "fi": "[Kuvaus tulossa pian]",
+      "is": "[Lýsing væntanleg]",
+      "de": "[Beschreibung folgt in Kürze]",
+      "fr": "[Description à venir]",
+      "es": "[Descripción próximamente]",
+      "it": "[Descrizione in arrivo]",
+      "pt": "[Descrição em breve]",
+      "nl": "[Beschrijving komt binnenkort]",
+      "pl": "[Opis wkrótce]",
+      "cs": "[Popis brzy]",
+      "hu": "[Leírás hamarosan]",
+      "ro": "[Descriere în curând]",
+      "bg": "[Описанието скоро]",
+      "el": "[Περιγραφή σύντομα]",
+      "hr": "[Opis uskoro]",
+      "et": "[Kirjeldus varsti]",
+      "lv": "[Apraksts drīzumā]",
+      "lt": "[Aprašymas netrukus]",
+      "ru": "[Описание скоро появится]",
+      "uk": "[Опис незабаром]",
+      "zh": "[描述即将推出]",
+      "ja": "[説明は近日公開]",
+      "ko": "[설명 준비 중]",
+      "vi": "[Mô tả sắp có]",
+      "th": "[คำอธิบายเร็วๆ นี้]",
+      "ar": "[الوصف قريبًا]",
+      "tr": "[Açıklama yakında]"
+    },
+    "englishFallbackNote": {
+      "sv": "Beskrivning finns endast på svenska och engelska. Visar engelska.",
+      "en": "Description available in Swedish and English only.",
+      "no": "Beskrivelsen finnes bare på svensk og engelsk. Viser engelsk.",
+      "da": "Beskrivelsen findes kun på svensk og engelsk. Viser engelsk.",
+      "fi": "Kuvaus on saatavilla vain ruotsiksi ja englanniksi. Näytetään englanniksi.",
+      "is": "Lýsing er aðeins til á sænsku og ensku. Sýnir ensku.",
+      "de": "Beschreibung nur auf Schwedisch und Englisch verfügbar. Englisch wird angezeigt.",
+      "fr": "Description disponible uniquement en suédois et en anglais. Affichage en anglais.",
+      "es": "Descripción disponible solo en sueco e inglés. Mostrando inglés.",
+      "it": "Descrizione disponibile solo in svedese e inglese. Viene mostrato l'inglese.",
+      "pt": "Descrição disponível apenas em sueco e inglês. A mostrar em inglês.",
+      "nl": "Beschrijving alleen beschikbaar in het Zweeds en Engels. Toont Engels.",
+      "pl": "Opis dostępny tylko w języku szwedzkim i angielskim. Wyświetlono angielski.",
+      "cs": "Popis je dostupný pouze ve švédštině a angličtině. Zobrazena angličtina.",
+      "hu": "A leírás csak svédül és angolul érhető el. Angol nyelven jelenik meg.",
+      "ro": "Descrierea este disponibilă doar în suedeză și engleză. Se afișează engleza.",
+      "bg": "Описанието е налично само на шведски и английски. Показва се на английски.",
+      "el": "Η περιγραφή είναι διαθέσιμη μόνο στα σουηδικά και αγγλικά. Εμφανίζεται στα αγγλικά.",
+      "hr": "Opis je dostupan samo na švedskom i engleskom. Prikazan je engleski.",
+      "et": "Kirjeldus on saadaval ainult rootsi ja inglise keeles. Kuvatakse inglise keeles.",
+      "lv": "Apraksts pieejams tikai zviedru un angļu valodā. Tiek rādīts angļu valodā.",
+      "lt": "Aprašymas pateikiamas tik švedų ir anglų kalbomis. Rodoma anglų kalba.",
+      "ru": "Описание доступно только на шведском и английском. Показан английский.",
+      "uk": "Опис доступний лише шведською та англійською. Показано англійською.",
+      "zh": "描述仅提供瑞典语和英语版本，目前显示英语。",
+      "ja": "説明はスウェーデン語と英語のみです。英語を表示しています。",
+      "ko": "설명은 스웨덴어와 영어로만 제공됩니다. 영어로 표시됩니다.",
+      "vi": "Mô tả chỉ có bằng tiếng Thụy Điển và tiếng Anh. Đang hiển thị tiếng Anh.",
+      "th": "คำอธิบายมีเฉพาะภาษาสวีเดนและอังกฤษ กำลังแสดงภาษาอังกฤษ",
+      "ar": "الوصف متوفر باللغتين السويدية والإنجليزية فقط. يتم عرض الإنجليزية.",
+      "tr": "Açıklama yalnızca İsveççe ve İngilizce olarak mevcuttur. İngilizce gösteriliyor."
+    },
+    "languagesTitle": {
+      "sv": "Språk",
+      "en": "Languages",
+      "no": "Språk",
+      "da": "Sprog",
+      "fi": "Kielet",
+      "is": "Tungumál",
+      "de": "Sprachen",
+      "fr": "Langues",
+      "es": "Idiomas",
+      "it": "Lingue",
+      "pt": "Idiomas",
+      "nl": "Talen",
+      "pl": "Języki",
+      "cs": "Jazyky",
+      "hu": "Nyelvek",
+      "ro": "Limbi",
+      "bg": "Езици",
+      "el": "Γλώσσες",
+      "hr": "Jezici",
+      "et": "Keeled",
+      "lv": "Valodas",
+      "lt": "Kalbos",
+      "ru": "Языки",
+      "uk": "Мови",
+      "zh": "语言",
+      "ja": "言語",
+      "ko": "언어",
+      "vi": "Ngôn ngữ",
+      "th": "ภาษา",
+      "ar": "اللغات",
+      "tr": "Diller"
+    },
+    "close": {
+      "sv": "Stäng",
+      "en": "Close",
+      "no": "Lukk",
+      "da": "Luk",
+      "fi": "Sulje",
+      "is": "Loka",
+      "de": "Schließen",
+      "fr": "Fermer",
+      "es": "Cerrar",
+      "it": "Chiudi",
+      "pt": "Fechar",
+      "nl": "Sluiten",
+      "pl": "Zamknij",
+      "cs": "Zavřít",
+      "hu": "Bezárás",
+      "ro": "Închide",
+      "bg": "Затвори",
+      "el": "Κλείσιμο",
+      "hr": "Zatvori",
+      "et": "Sulge",
+      "lv": "Aizvērt",
+      "lt": "Uždaryti",
+      "ru": "Закрыть",
+      "uk": "Закрити",
+      "zh": "关闭",
+      "ja": "閉じる",
+      "ko": "닫기",
+      "vi": "Đóng",
+      "th": "ปิด",
+      "ar": "إغلاق",
+      "tr": "Kapat"
+    }
+  },
+
+  // ---- CONTAINERS (the actual planters on the map, e.g. "R12") ----------
+  // "species"  = list of species-ids (from the "species" section above)
+  //              planted in this container. Empty list = empty planter.
+  // "joiner"   = the symbol shown between multiple species: "&" means
+  //              both are genuinely planted together; "/" means it's one
+  //              or the other, not yet confirmed which (see Cucumber/Zucchini).
+  //
+  // TO ADD A NEW PLANT TO AN EXISTING CONTAINER: just add its species-id
+  // to that container's "species" list here.
+  "containers": {
+    "R1": {
+      "species": [
+        "honeyberry"
+      ],
+      "joiner": "&"
+    },
+    "R2": {
+      "species": [
+        "honeyberry"
+      ],
+      "joiner": "&"
+    },
+    "R3": {
+      "species": [
+        "celery"
+      ],
+      "joiner": "&"
+    },
+    "R4": {
+      "species": [
+        "celery"
+      ],
+      "joiner": "&"
+    },
+    "R5": {
+      "species": [
+        "coriander",
+        "tomato"
+      ],
+      "joiner": "&"
+    },
+    "R6": {
+      "species": [
+        "tomatillo"
+      ],
+      "joiner": "&"
+    },
+    "R7": {
+      "species": [
+        "mexican_oregano"
+      ],
+      "joiner": "&"
+    },
+    "R8": {
+      "species": [
+        "tomato"
+      ],
+      "joiner": "&"
+    },
+    "R10": {
+      "species": [
+        "tomato"
+      ],
+      "joiner": "&"
+    },
+    "R12": {
+      "species": [
+        "tomato"
+      ],
+      "joiner": "&"
+    },
+    "R9": {
+      "species": [
+        "beans"
+      ],
+      "joiner": "&"
+    },
+    "R11": {
+      "species": [
+        "sugar_snap"
+      ],
+      "joiner": "&"
+    },
+    "R13": {
+      "species": [
+        "basil"
+      ],
+      "joiner": "&"
+    },
+    "R14": {
+      "species": [
+        "tomato",
+        "basil"
+      ],
+      "joiner": "&"
+    },
+    "R15": {
+      "species": [],
+      "joiner": "&"
+    },
+    "R16": {
+      "species": [
+        "parsley",
+        "mangold"
+      ],
+      "joiner": "&"
+    },
+    "R17": {
+      "species": [
+        "rosemary"
+      ],
+      "joiner": "&"
+    },
+    "R18": {
+      "species": [
+        "oregano"
+      ],
+      "joiner": "&"
+    },
+    "R19": {
+      "species": [
+        "parsley",
+        "mangold",
+        "sugar_snap"
+      ],
+      "joiner": "&"
+    },
+    "R20": {
+      "species": [
+        "mangold"
+      ],
+      "joiner": "&"
+    },
+    "R21": {
+      "species": [
+        "parsley"
+      ],
+      "joiner": "&"
+    },
+    "R22": {
+      "species": [
+        "rhubarb"
+      ],
+      "joiner": "&"
+    },
+    "R23": {
+      "species": [
+        "rhubarb"
+      ],
+      "joiner": "&"
+    },
+    "F1": {
+      "species": [
+        "red_currant"
+      ],
+      "joiner": "&"
+    },
+    "F7": {
+      "species": [
+        "red_currant"
+      ],
+      "joiner": "&"
+    },
+    "F2": {
+      "species": [
+        "gooseberry"
+      ],
+      "joiner": "&"
+    },
+    "F4": {
+      "species": [
+        "gooseberry"
+      ],
+      "joiner": "&"
+    },
+    "F6": {
+      "species": [
+        "gooseberry"
+      ],
+      "joiner": "&"
+    },
+    "F3": {
+      "species": [
+        "blackcurrant"
+      ],
+      "joiner": "&"
+    },
+    "F5": {
+      "species": [
+        "blackcurrant"
+      ],
+      "joiner": "&"
+    },
+    "F8": {
+      "species": [
+        "blackberry"
+      ],
+      "joiner": "&"
+    },
+    "T1": {
+      "species": [
+        "strawberry"
+      ],
+      "joiner": "&"
+    },
+    "T2": {
+      "species": [
+        "strawberry"
+      ],
+      "joiner": "&"
+    },
+    "T6": {
+      "species": [
+        "strawberry"
+      ],
+      "joiner": "&"
+    },
+    "T7": {
+      "species": [
+        "strawberry"
+      ],
+      "joiner": "&"
+    },
+    "T3": {
+      "species": [
+        "jerusalem_artichoke"
+      ],
+      "joiner": "&"
+    },
+    "T4": {
+      "species": [
+        "oregano",
+        "gooseberry"
+      ],
+      "joiner": "&"
+    },
+    "T5": {
+      "species": [
+        "tarragon",
+        "red_currant"
+      ],
+      "joiner": "&"
+    },
+    "T8": {
+      "species": [
+        "chives"
+      ],
+      "joiner": "&"
+    },
+    "T9": {
+      "species": [
+        "tarragon"
+      ],
+      "joiner": "&"
+    },
+    "K1": {
+      "species": [
+        "chili"
+      ],
+      "joiner": "&"
+    },
+    "K2": {
+      "species": [
+        "tomato"
+      ],
+      "joiner": "&"
+    },
+    "K3": {
+      "species": [
+        "tomato"
+      ],
+      "joiner": "&"
+    },
+    "K4": {
+      "species": [
+        "tomato"
+      ],
+      "joiner": "&"
+    },
+    "K5": {
+      "species": [
+        "cucumber",
+        "zucchini"
+      ],
+      "joiner": "/"
+    },
+    "K6": {
+      "species": [
+        "cucumber",
+        "zucchini"
+      ],
+      "joiner": "/"
+    },
+    "K7": {
+      "species": [
+        "cucumber",
+        "zucchini"
+      ],
+      "joiner": "/"
+    },
+    "K8": {
+      "species": [
+        "cucumber",
+        "zucchini"
+      ],
+      "joiner": "/"
+    },
+    "K9": {
+      "species": [
+        "beans"
+      ],
+      "joiner": "&"
+    },
+    "K11": {
+      "species": [
+        "beans"
+      ],
+      "joiner": "&"
+    },
+    "K10": {
+      "species": [
+        "sugar_snap"
+      ],
+      "joiner": "&"
+    }
+  },
+
+  // ---- PIN POSITIONS ------------------------------------------------------
+  // x/y as a PERCENTAGE of the floor plan image's width/height (not pixels).
+  // This is what makes pins stay correctly placed no matter how the image
+  // is displayed or resized. Recalculate these only if the floor plan image
+  // itself is re-cropped or replaced with a differently-framed photo.
+  "positions": {
+    "R1": {
+      "x": 33.64,
+      "y": 6.36
+    },
+    "R2": {
+      "x": 73.3,
+      "y": 6.02
+    },
+    "R3": {
+      "x": 46.58,
+      "y": 12.48
+    },
+    "R4": {
+      "x": 57.42,
+      "y": 12.91
+    },
+    "R5": {
+      "x": 46.4,
+      "y": 20.03
+    },
+    "R6": {
+      "x": 57.43,
+      "y": 17.39
+    },
+    "R7": {
+      "x": 46.4,
+      "y": 25.79
+    },
+    "R8": {
+      "x": 57.42,
+      "y": 21.75
+    },
+    "R9": {
+      "x": 46.58,
+      "y": 32.43
+    },
+    "R10": {
+      "x": 57.43,
+      "y": 26.12
+    },
+    "R11": {
+      "x": 46.58,
+      "y": 36.8
+    },
+    "R12": {
+      "x": 57.43,
+      "y": 32.7
+    },
+    "R13": {
+      "x": 47.11,
+      "y": 47.58
+    },
+    "R14": {
+      "x": 57.42,
+      "y": 37.07
+    },
+    "R15": {
+      "x": 58.1,
+      "y": 39.3
+    },
+    "R16": {
+      "x": 57.43,
+      "y": 43.92
+    },
+    "R17": {
+      "x": 47.11,
+      "y": 56.31
+    },
+    "R18": {
+      "x": 57.42,
+      "y": 48.28
+    },
+    "R19": {
+      "x": 82.27,
+      "y": 52.69
+    },
+    "R20": {
+      "x": 57.43,
+      "y": 52.65
+    },
+    "R21": {
+      "x": 57.6,
+      "y": 62.73
+    },
+    "R22": {
+      "x": 74.48,
+      "y": 74.28
+    },
+    "R23": {
+      "x": 74.49,
+      "y": 78.64
+    },
+    "F1": {
+      "x": 46.94,
+      "y": 6.28
+    },
+    "F2": {
+      "x": 59.74,
+      "y": 6.29
+    },
+    "F3": {
+      "x": 46.37,
+      "y": 16.27
+    },
+    "F4": {
+      "x": 57.4,
+      "y": 29.43
+    },
+    "F5": {
+      "x": 46.91,
+      "y": 40.64
+    },
+    "F6": {
+      "x": 57.4,
+      "y": 56.71
+    },
+    "F7": {
+      "x": 46.73,
+      "y": 62.96
+    },
+    "F8": {
+      "x": 79.61,
+      "y": 58.97
+    },
+    "T1": {
+      "x": 20.91,
+      "y": 10.92
+    },
+    "T2": {
+      "x": 84.0,
+      "y": 9.52
+    },
+    "T3": {
+      "x": 20.91,
+      "y": 23.22
+    },
+    "T4": {
+      "x": 83.83,
+      "y": 22.03
+    },
+    "T5": {
+      "x": 20.55,
+      "y": 35.62
+    },
+    "T6": {
+      "x": 84.53,
+      "y": 34.97
+    },
+    "T7": {
+      "x": 20.38,
+      "y": 47.7
+    },
+    "T8": {
+      "x": 86.85,
+      "y": 47.05
+    },
+    "T9": {
+      "x": 20.91,
+      "y": 58.48
+    },
+    "K1": {
+      "x": 80.94,
+      "y": 5.74
+    },
+    "K2": {
+      "x": 79.34,
+      "y": 15.33
+    },
+    "K3": {
+      "x": 79.16,
+      "y": 18.46
+    },
+    "K4": {
+      "x": 63.7,
+      "y": 19.86
+    },
+    "K5": {
+      "x": 57.3,
+      "y": 40.46
+    },
+    "K6": {
+      "x": 46.99,
+      "y": 44.13
+    },
+    "K7": {
+      "x": 46.64,
+      "y": 60.52
+    },
+    "K8": {
+      "x": 57.48,
+      "y": 59.33
+    },
+    "K9": {
+      "x": 74.9,
+      "y": 65.69
+    },
+    "K10": {
+      "x": 75.07,
+      "y": 67.53
+    },
+    "K11": {
+      "x": 75.25,
+      "y": 69.9
+    }
+  },
+
+  // ---- FLOOR PLAN IMAGE ---------------------------------------------------
+  // "url" points at the "main" branch, so replacing the file in the repo
+  // (same filename) updates the live app automatically — no link change needed.
+  "img": {
+    "url": "https://raw.githubusercontent.com/MercuryAquaponics/Beta-Garden-Map/main/Karta%20Clarion.jpg",
+    "w": 420,
+    "h": 688
+  },
+
+  // ---- CONTAINER PHOTOS ---------------------------------------------------
+  // code -> relative path to a photo of that physical planter.
+  // Any container NOT listed here just shows the "photo pending" placeholder.
+  // Example:  "R12": "images/containers/R12.jpg"
+  "containerImages": {},
+
+  // ---- PLANT INFO: descriptions + dish gallery, per species-id ------------
+  // "sv" / "en" = free-text description, written by hand (Swedish/English
+  //               only — every other language automatically shows the
+  //               English text plus a small translated note explaining why).
+  // "dishes"    = array of dishes this plant is used in. Each dish:
+  //     { "id": "unique-id",
+  //       "name": { "sv": "...", "en": "..." },
+  //       "image": "images/dishes/filename.jpg",   (or null for a placeholder box)
+  //       "ingredients": ["speciesid1", "speciesid2", ...] }
+  //
+  // Leave "sv"/"en" as null and "dishes" as [] until you have real content —
+  // the app shows tidy placeholders automatically in the meantime.
+  "plantInfo": {
+    "honeyberry": {
+      "sv": null,
+      "en": null,
+      "dishes": []
+    },
+    "celery": {
+      "sv": null,
+      "en": null,
+      "dishes": []
+    },
+    "coriander": {
+      "sv": null,
+      "en": null,
+      "dishes": []
+    },
+    "tomato": {
+      "sv": null,
+      "en": null,
+      "dishes": []
+    },
+    "tomatillo": {
+      "sv": null,
+      "en": null,
+      "dishes": []
+    },
+    "mexican_oregano": {
+      "sv": null,
+      "en": null,
+      "dishes": []
+    },
+    "beans": {
+      "sv": null,
+      "en": null,
+      "dishes": []
+    },
+    "sugar_snap": {
+      "sv": null,
+      "en": null,
+      "dishes": []
+    },
+    "basil": {
+      "sv": null,
+      "en": null,
+      "dishes": []
+    },
+    "parsley": {
+      "sv": null,
+      "en": null,
+      "dishes": []
+    },
+    "mangold": {
+      "sv": null,
+      "en": null,
+      "dishes": []
+    },
+    "rosemary": {
+      "sv": null,
+      "en": null,
+      "dishes": []
+    },
+    "oregano": {
+      "sv": null,
+      "en": null,
+      "dishes": []
+    },
+    "rhubarb": {
+      "sv": null,
+      "en": null,
+      "dishes": []
+    },
+    "red_currant": {
+      "sv": null,
+      "en": null,
+      "dishes": []
+    },
+    "gooseberry": {
+      "sv": null,
+      "en": null,
+      "dishes": []
+    },
+    "blackcurrant": {
+      "sv": null,
+      "en": null,
+      "dishes": []
+    },
+    "blackberry": {
+      "sv": null,
+      "en": null,
+      "dishes": []
+    },
+    "strawberry": {
+      "sv": null,
+      "en": null,
+      "dishes": []
+    },
+    "jerusalem_artichoke": {
+      "sv": null,
+      "en": null,
+      "dishes": []
+    },
+    "tarragon": {
+      "sv": null,
+      "en": null,
+      "dishes": []
+    },
+    "chives": {
+      "sv": null,
+      "en": null,
+      "dishes": []
+    },
+    "chili": {
+      "sv": null,
+      "en": null,
+      "dishes": []
+    },
+    "cucumber": {
+      "sv": null,
+      "en": null,
+      "dishes": []
+    },
+    "zucchini": {
+      "sv": null,
+      "en": null,
+      "dishes": []
+    }
+  }
+};
