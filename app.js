@@ -1,5 +1,29 @@
 // Clarion Hotel Stockholm — Garden Map app logic
 // Requires data.js loaded first (defines global DATA)
+//
+// HANDOFF NOTE: this whole file is wrapped in one big try/catch (see the
+// bottom of the file for the matching `catch` block). This exists so that
+// if someone breaks data.js while hand-editing it (a missing comma, an
+// unmatched bracket, etc.), the app shows a clear on-screen error message
+// instead of silently rendering a blank page with no explanation. The full
+// technical error always still goes to the browser console (F12) either way.
+
+function showFatalError(err) {
+  document.body.innerHTML = `
+    <div style="max-width:600px;margin:60px auto;padding:24px;background:#fff3f0;
+      border:2px solid #c0392b;border-radius:10px;font-family:sans-serif;color:#2a2a22;">
+      <h2 style="color:#c0392b;margin-bottom:12px;">⚠ The garden map couldn't load</h2>
+      <p style="margin-bottom:10px;">This almost always means <code>data.js</code> has a small
+      syntax mistake (a missing comma, quote, or bracket) from a recent hand-edit.</p>
+      <p style="margin-bottom:10px;">Open the browser console (press F12, click "Console") to see
+      exactly which line the error points to, or undo the most recent change to
+      <code>data.js</code> and re-upload.</p>
+      <p style="font-size:.8em;color:#777;">Technical detail: ${err && err.message ? err.message : err}</p>
+    </div>`;
+  console.error('Fatal error while starting the garden map app:', err);
+}
+
+try {
 
 const LANGUAGES = DATA.languages;
 const VERIFIED = new Set(DATA.verifiedLangs);
@@ -13,6 +37,18 @@ const IMG = DATA.img;
 const IMG_W = IMG.w, IMG_H = IMG.h;
 
 // ─── STATE ──────────────────────────────────────────────────────────────────
+// currentLang        : the language code currently selected (e.g. 'sv')
+// catVisible         : which of R/F/T/K are currently shown on the map (pill toggles)
+// openTooltipCode    : the pin code whose tooltip is currently open, or null
+// plantsFilter       : null = show the full species list in the "Våra Växter"
+//                       panel; 'R'/'F'/'T'/'K' = show just that category's containers
+// speciesBackTarget  : remembers where the user came FROM when opening a species
+//                       page, so its Back button returns to the right place —
+//                       either {type:'container', code} or {type:'allplants', filter}
+// clickTimers        : per-pin timers used to tell a single click (open tooltip)
+//                       apart from a double click (open container detail) — see
+//                       the pin event listeners further down for how this works
+
 let currentLang = 'sv';
 const catVisible = { R:true, F:true, T:true, K:true };
 let openTooltipCode = null;
@@ -42,6 +78,12 @@ function containerLatin(code) {
 }
 
 // ─── HEADER: CATEGORY PILLS + "OUR PLANTS" PILL ────────────────────────────
+// The R/F/T/K pills ONLY toggle which pins are visible on the map — they
+// have no other function (the old "open a list" button was removed from
+// them). "Våra Växter" is a separate pill that opens the plants side panel;
+// its visual position (centered, bigger) is set purely in styles.css via
+// the `order` CSS property assigned to each pill below.
+
 const layerPanel = document.getElementById('layer-panel');
 
 const PILL_ORDER = { R:1, F:2, T:4, K:5 };
@@ -68,6 +110,10 @@ ourPlantsPill.addEventListener('click', () => openPlantsPanel(null));
 layerPanel.appendChild(ourPlantsPill);
 
 // ─── LANGUAGE PANEL ─────────────────────────────────────────────────────────
+// Builds one button per language in DATA.languages. Languages not in
+// DATA.verifiedLangs get a small "*" appended as a low-confidence hint
+// (see data.js's "verifiedLangs" comment for what that means).
+
 const langGrid = document.getElementById('lang-grid');
 LANGUAGES.forEach(([code, label]) => {
   const btn = document.createElement('button');
@@ -81,6 +127,12 @@ LANGUAGES.forEach(([code, label]) => {
 document.getElementById('lang-btn').addEventListener('click', () => openPanel('lang-panel'));
 
 // ─── PANEL MANAGEMENT (only one open at a time) ────────────────────────────
+// There are 3 side panels (language / plants / detail) but only one should
+// ever be visibly open, so opening any one of them closes the other two.
+// After any open/close, we wait for the 0.3s CSS width transition (see
+// ".side-panel" in styles.css) to finish before calling centerImage(),
+// otherwise we'd be centering the map in the panel's OLD width, not its new one.
+
 const PANEL_IDS = ['lang-panel', 'plants-panel', 'detail-panel'];
 
 function openPanel(id) {
@@ -100,6 +152,11 @@ PANEL_IDS.forEach(pid => {
 });
 
 // ─── LANGUAGE SWITCH ────────────────────────────────────────────────────────
+// Re-renders every bit of on-screen text in the new language. Nothing here
+// is re-created from scratch — it just updates text content of elements
+// that already exist, and re-renders whichever side panel currently happens
+// to be open so its content matches the new language too.
+
 function setLang(lang) {
   currentLang = lang;
   document.getElementById('search').placeholder = ui('searchPlaceholder');
@@ -132,6 +189,14 @@ function buildLegend() {
 }
 
 // ─── "VÅRA VÄXTER" PANEL: category filter buttons + species/container list ─
+// This one panel serves two different views depending on `plantsFilter`:
+//   • plantsFilter === null   -> full species list, one row per unique plant
+//     (sourced directly from DATA.species, so it's automatically deduplicated
+//     — no extra logic needed to avoid showing the same plant twice)
+//   • plantsFilter === 'R'/'F'/'T'/'K' -> that category's container list
+//     (one row per planter code, e.g. "R12", showing what's actually in it)
+// Clicking an already-active category button clears the filter (toggle behavior).
+
 function openPlantsPanel(filter) {
   plantsFilter = filter;
   openPanel('plants-panel');
@@ -191,6 +256,13 @@ function renderPlantsPanel() {
 }
 
 // ─── DETAIL PANEL: container page ──────────────────────────────────────────
+// Shown when a pin is double-clicked, or a container row is clicked in the
+// "Våra Växter" panel. Its Back button is intentionally simple and always
+// predictable: it goes to the All Plants list filtered to THIS container's
+// own category — regardless of how the user actually got here (map pin vs.
+// list click) — because that's the one thing we can always derive from the
+// code itself without needing to track navigation history for this page.
+
 window.__currentDetail = null;
 
 function openContainerDetail(code, backCtx) {
@@ -222,7 +294,9 @@ function renderContainerDetail(code) {
       <span class="detail-label">${ui('type')}</span>
       <span class="detail-value">${cat.label[currentLang] || cat.label.en}</span>
     </div>
-    <div class="container-image">[${ui('container')} — photo pending]</div>
+    ${DATA.containerImages && DATA.containerImages[code]
+      ? `<div class="container-image"><img src="${DATA.containerImages[code]}" alt="${code}"></div>`
+      : `<div class="container-image">[${ui('container')} — photo pending]</div>`}
     <div class="detail-section">
       <span class="detail-label">${ui('plants')}</span>
       <div class="plant-list-in-container">${plantsHTML}</div>
@@ -239,6 +313,21 @@ function renderContainerDetail(code) {
 }
 
 // ─── DETAIL PANEL: species page ────────────────────────────────────────────
+// Unlike the container page, THIS page's Back button DOES depend on where
+// the user came from (see speciesBackTarget), because a species can be
+// reached from a container's plant list OR directly from the All Plants
+// list — and those two need to go back to different places.
+//
+// Description language logic (see getDescriptionHTML below):
+//   Swedish selected + Swedish text exists      -> show Swedish, no note
+//   Any other language + English text exists    -> show English text,
+//                                                    plus a translated note
+//                                                    explaining it's a fallback
+//   Nothing written yet for this species at all -> neutral "coming soon" placeholder
+// This mirrors the project's intentional 2-tier translation policy: UI
+// chrome and plant names are translated into all languages, but free-text
+// descriptions are hand-written in Swedish/English only.
+
 function openSpeciesDetail(id, backCtx) {
   speciesBackTarget = backCtx;
   window.__currentDetail = { type:'species', id };
@@ -299,6 +388,19 @@ function renderSpeciesDetail(id) {
 }
 
 // ─── PIN ICON ───────────────────────────────────────────────────────────────
+// Pins are positioned with left/top as PERCENTAGES (from DATA.positions),
+// which is what lets them stay correctly placed at any zoom level or panel
+// width without any recalculation — the percentage is always relative to
+// the floor plan image itself, not the screen.
+//
+// Click vs double-click: a single click should open the tooltip, but we
+// can't fire that immediately on 'click', because a double-click is ALSO
+// two 'click' events under the hood. So a single click starts a short timer
+// (220ms) before actually opening the tooltip; if a 'dblclick' happens in
+// that window, it cancels the timer and opens the container detail page
+// instead. This is a standard way to distinguish the two without ever
+// briefly flashing the tooltip open during a double-click.
+
 function pinSVG(hex) {
   return `<svg viewBox="0 0 24 34" xmlns="http://www.w3.org/2000/svg">
     <path d="M12 0C5.37 0 0 5.37 0 12c0 9 12 22 12 22S24 21 24 12C24 5.37 18.63 0 12 0z" fill="${hex}" stroke="white" stroke-width="1.5"/>
@@ -375,15 +477,25 @@ function toggleTooltip(code) {
   closeAllTooltips();
   renderTooltip(code);
   pinEls[code].tooltipEl.classList.add('open');
+  pinEls[code].pinEl.style.zIndex = '50'; // lift above nearby pins so they can't paint over this tooltip
   openTooltipCode = code;
 }
 function closeAllTooltips() {
-  Object.values(pinEls).forEach(({ tooltipEl }) => tooltipEl.classList.remove('open'));
+  Object.values(pinEls).forEach(({ tooltipEl, pinEl }) => {
+    tooltipEl.classList.remove('open');
+    pinEl.style.zIndex = '';
+  });
   openTooltipCode = null;
 }
 document.getElementById('map-viewport').addEventListener('click', () => closeAllTooltips());
 
 // ─── SEARCH ─────────────────────────────────────────────────────────────────
+// Matches against the container's code, its Latin name, and its translated
+// name in EVERY language (not just the currently-selected one) — so a guest
+// can search in their own language even if the UI happens to be showing a
+// different one. Clicking a result pans/zooms to that pin and opens its
+// tooltip, same as clicking the pin directly would.
+
 function matchesQuery(code, q) {
   if (code.toLowerCase().includes(q)) return true;
   const latin = containerLatin(code);
@@ -415,9 +527,7 @@ function doSearch(query) {
       const code = el.dataset.code;
       zoomToCode(code);
       closeAllTooltips();
-      renderTooltip(code);
-      pinEls[code].tooltipEl.classList.add('open');
-      openTooltipCode = code;
+      toggleTooltip(code);
       box.style.display = 'none';
       document.getElementById('search').value = '';
     });
@@ -427,6 +537,22 @@ document.getElementById('search').addEventListener('input', e => doSearch(e.targ
 document.addEventListener('click', e => { if (!e.target.closest('.search-wrap')) document.getElementById('search-results').style.display = 'none'; });
 
 // ─── PAN / ZOOM ENGINE ──────────────────────────────────────────────────────
+// The whole floor plan (image + pins) lives inside #map-stage, which we move
+// and scale using a single CSS transform: translate(tx,ty) scale(scale).
+// Everything below is just careful bookkeeping of tx/ty/scale so that:
+//   • zoomAt(): zooming with the mouse wheel keeps the point UNDER THE CURSOR
+//     fixed on screen (the standard "zoom towards cursor" feel), rather than
+//     zooming towards the top-left corner of the image.
+//   • centerImage(): moves the image so its center aligns with the center of
+//     whatever the current viewport size is, WITHOUT changing zoom — used by
+//     the ⊙ button and automatically after the sidebar opens/closes so the
+//     map doesn't end up looking off-center in a narrower viewport.
+//   • fitStage(): picks a zoom level that fits the whole image in the
+//     current viewport — only used on first load and on window resize.
+// Pointer events (not separate mouse/touch handlers) are used so the same
+// code handles mouse-drag panning, one-finger touch panning, AND two-finger
+// pinch-zoom (tracked via the activePointers map) without duplicating logic.
+
 const viewport = document.getElementById('map-viewport');
 const stage = document.getElementById('map-stage');
 let scale = 1, tx = 0, ty = 0, minScale = 0.3, maxScale = 6;
@@ -526,3 +652,7 @@ setLang('sv');
 document.getElementById('lang-panel-title').textContent = ui('languagesTitle');
 document.getElementById('search').placeholder = ui('searchPlaceholder');
 requestAnimationFrame(() => fitStage());
+
+} catch (err) {
+  showFatalError(err);
+}
