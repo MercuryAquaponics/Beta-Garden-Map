@@ -145,8 +145,10 @@ function renderPlantsPanel() {
   catBtns.innerHTML = Object.keys(CATEGORIES).map(catId => {
     const cat = CATEGORIES[catId];
     const active = plantsFilter === catId;
+    const bg = active ? cat.hex : 'white';
+    const textColor = active ? 'white' : cat.hex;
     return `<button class="category-btn${active ? ' active' : ''}" data-cat="${catId}"
-      style="border-color:${cat.hex}; color:${active ? cat.hex : '#555'}">${cat.label[currentLang] || cat.label.en}</button>`;
+      style="border-color:${cat.hex}; background:${bg}; color:${textColor}">${cat.label[currentLang] || cat.label.en}</button>`;
   }).join('');
   catBtns.querySelectorAll('.category-btn').forEach(btn => {
     btn.addEventListener('click', () => {

@@ -87,14 +87,14 @@ header {
 .lang-unverified-mark { opacity:.6; font-size:.75em; }
 
 /* Våra Växter panel: category filter buttons + list */
-.category-buttons { display:flex; flex-wrap:wrap; gap:6px; padding:0 12px; margin-bottom:8px; }
+.category-buttons { display:flex; flex-wrap:wrap; justify-content:space-between; gap:6px 8px; padding:0 12px; margin-bottom:8px; }
 .category-btn {
   padding:6px 12px; background:white; border:2px solid; border-radius:6px; cursor:pointer;
   font-size:.82rem; font-weight:600; transition:background .15s; text-align:center;
   white-space:nowrap; flex:0 0 auto;
 }
 .category-btn:hover { background:rgba(0,0,0,.05); }
-.category-btn.active { background:var(--cream); font-weight:700; }
+.category-btn.active { font-weight:700; color:white !important; }
 
 #plant-items { display:flex; flex-direction:column; }
 .plant-item {
